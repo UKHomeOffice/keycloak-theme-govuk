@@ -1,0 +1,15 @@
+{
+  "name": "keycloak-theme-govuk",
+  "version": "0.0.1",
+  "dependencies": {
+    "govuk-elements-sass": "2.2.1",
+    "govuk_template_jinja": "0.19.2"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.2",
+    "grunt-cli": "0.1.13",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-sass": "^2.0.0"
+  }
+}
