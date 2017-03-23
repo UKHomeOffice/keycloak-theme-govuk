@@ -33,7 +33,7 @@
             <meta name="${meta?split('==')[0]}" content="${meta?split('==')[1]}"/>
         </#list>
     </#if>
-    <title><#nested "title"></title>
+    <title><#nested "title"> - ${realm.displayName!'GOV.UK'}</title>
 
     <#-- Start GOV.UK Template <head> content -->
 
@@ -103,34 +103,39 @@
         <p>GOV.UK uses cookies to make the site simpler. <a href=\"https://www.gov.uk/help/cookies\">Find out more about cookies</a></p>
       
     </div>
-    <header role="banner" id="global-header" class="{% block header_class %}{% endblock %}">
+    <header role="banner" id="global-header" class="${properties.kcHeaderClass!}">
       <div class="header-wrapper">
         <div class="header-global">
           <div class="header-logo">
-            <a href="{{ homepage_url|default('https://www.gov.uk') }}" title="{{ logo_link_title|default('Go to the GOV.UK homepage') }}" id="logo" class="content">
-              <img src="${url.resourcesPath}/vendor/govuk_template/images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt=""> {{ global_header_text|default('GOV.UK') }}
+            <a href="${realm.displayNameHtml!'https://www.gov.uk'}" title="Go to the homepage" id="logo" class="content">
+              <img src="${url.resourcesPath}/vendor/govuk_template/images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt=""> ${realm.displayName!'GOV.UK'}
             </a>
           </div>
-          {% block inside_header %}{% endblock %}
         </div>
-        {% block proposition_header %}{% endblock %}
       </div>
     </header>
 
-    {% block after_header %}{% endblock %}
     <div id="global-header-bar"></div>
 
     <#-- End GOV.UK Template header -->
 
 
-    <div id="kc-logo"><a href="${properties.kcLogoLink!'#'}"><div id="kc-logo-wrapper"></div></a></div>
+    <main id="content" role="main">
+        <div class="grid-row">
+            <div class="column-two-thirds">
+                <h1 class="heading-large"><#nested "title"></h1>
+
+
+    <#-- The GOV.UK Template is not designed for custom logos, so remove the Keycloak template’s logo HTML -->
+    <#-- <div id="kc-logo"><a href="${properties.kcLogoLink!'#'}"><div id="kc-logo-wrapper"></div></a></div> -->
 
     <div id="kc-container" class="${properties.kcContainerClass!}">
         <div id="kc-container-wrapper" class="${properties.kcContainerWrapperClass!}">
 
-            <div id="kc-header" class="${properties.kcHeaderClass!}">
+            <#-- The GOV.UK Template header is included above, with Keycloak’s nested header section inside it, so remove the Keycloak template’s header HTML -->
+            <#-- <div id="kc-header" class="${properties.kcHeaderClass!}">
                 <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}"><#nested "header"></div>
-            </div>
+            </div>-->
 
             <#if realm.internationalizationEnabled>
                 <div id="kc-locale" class="${properties.kcLocaleClass!}">
@@ -179,6 +184,11 @@
             </div>
         </div>
     </div>
+
+
+            </div>
+        </div>
+    </main>
 
 
     <#-- Start GOV.UK Template footer -->
