@@ -1,6 +1,27 @@
 <#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" class="${properties.kcHtmlClass!}">
+
+<#-- Attempt to reverse-engineer code for page’s current language, as Keycloak does not currently make this available -->
+<#assign LANG_CODE = "en">
+<#if .locale??>
+    <#assign LANG_CODE = .locale>
+</#if>
+<#if locale??>
+    <#list locale.supported>
+        <#items as supportedLocale>
+            <#if supportedLocale.label == locale.current>
+                <#if supportedLocale.url?contains("?kc_locale=")>
+                    <#assign LANG_CODE = supportedLocale.url?keep_after("?kc_locale=")[0..1]>
+                </#if>
+                <#if supportedLocale.url?contains("&kc_locale=")>
+                    <#assign LANG_CODE = supportedLocale.url?keep_after("&kc_locale=")[0..1]>
+                </#if>
+            </#if>
+        </#items>
+    </#list>
+</#if>
+
+<html xmlns="http://www.w3.org/1999/xhtml" class="${properties.kcHtmlClass!}" lang="${LANG_CODE}">
 
 <head>
     <meta charset="utf-8">
