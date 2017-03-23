@@ -156,15 +156,26 @@
                             <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">
 
                                 <#if displayMessage && message?has_content>
+                                    <#if message.type = 'error'>
+                                        <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+                                            <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+                                                There is a problem with this form
+                                            </h1>
+
+                                            <ul class="error-summary-list" id="error-details">
+                                                <li>${message.summary}</li>
+                                            </ul>
+                                        </div>
+                                    <#else>
                                     <div class="${properties.kcFeedbackAreaClass!}">
                                         <div class="alert alert-${message.type}">
                                             <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
                                             <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
-                                            <#if message.type = 'error'><span class="${properties.kcFeedbackErrorIcon!}"></span></#if>
                                             <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
                                             <span class="kc-feedback-text">${message.summary}</span>
                                         </div>
                                     </div>
+                                    </#if>
                                 </#if>
 
                                 <div id="kc-form" class="${properties.kcFormAreaClass!}">
