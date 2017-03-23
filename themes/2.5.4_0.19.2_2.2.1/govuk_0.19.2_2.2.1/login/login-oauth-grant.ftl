@@ -2,12 +2,12 @@
 <@layout.registrationLayout bodyClass="oauth"; section>
     <#if section = "title">
         ${msg("oauthGrantTitle")}
-    <#elseif section = "header">
-    ${msg("oauthGrantTitleHtml",(realm.displayNameHtml!''))} <strong><#if client.name??>${advancedMsg(client.name)}<#else>${client.clientId}</#if></strong>.
     <#elseif section = "form">
+        ${msg("oauthGrantTitleHtml",(realm.displayName!''))} <strong><#if client.name??>${advancedMsg(client.name)}<#else>${client.clientId}</#if></strong>.
+
         <div id="kc-oauth" class="content-area">
-            <h3>${msg("oauthGrantRequest")}</h3>
-            <ul>
+            <h2 class="heading-medium">${msg("oauthGrantRequest")}</h3>
+            <ul class="ist list-bullet">
                 <#if oauth.claimsRequested??>
                     <li>
                         <span>
