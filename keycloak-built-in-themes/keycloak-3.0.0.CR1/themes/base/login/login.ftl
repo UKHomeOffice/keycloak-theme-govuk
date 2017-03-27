@@ -31,11 +31,11 @@
                     </div>
                 </div>
 
-
+                <div class="${properties.kcFormGroupClass!}">
                     <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
                         <#if realm.rememberMe && !usernameEditDisabled??>
-                            <div class="checkbox ${properties.kcFormGroupClass}">
-                                <label class="${properties.kcCheckboxLabelClass}">
+                            <div class="checkbox">
+                                <label>
                                     <#if login.rememberMe??>
                                         <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3" checked> ${msg("rememberMe")}
                                     <#else>
@@ -44,7 +44,7 @@
                                 </label>
                             </div>
                         </#if>
-                        <div class="${properties.kcFormOptionsWrapperClass!} ${properties.kcFormGroupClass}">
+                        <div class="${properties.kcFormOptionsWrapperClass!}">
                             <#if realm.resetPasswordAllowed>
                                 <span><a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
                             </#if>
@@ -55,7 +55,8 @@
                         <div class="${properties.kcFormButtonsWrapperClass!}">
                             <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
                         </div>
-                    </div>
+                     </div>
+                </div>
             </form>
         </#if>
     <#elseif section = "info" >
@@ -67,8 +68,7 @@
 
         <#if realm.password && social.providers??>
             <div id="kc-social-providers">
-                <h2 class="heading-medium">Sign in using an existing identity</h2>
-                <ul class="list list-bullet">
+                <ul>
                     <#list social.providers as p>
                         <li><a href="${p.loginUrl}" id="zocial-${p.alias}" class="zocial ${p.providerId}"> <span class="text">${p.displayName}</span></a></li>
                     </#list>

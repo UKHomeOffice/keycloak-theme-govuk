@@ -1,0 +1,7 @@
+{
+  "name": "keycloak-theme-govuk-manage-themes",
+  "version": "0.0.1",
+  "devDependencies": {
+    "node-archiver": "^1.3"
+  }
+}
