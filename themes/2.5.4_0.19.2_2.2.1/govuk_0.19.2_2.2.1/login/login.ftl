@@ -44,18 +44,19 @@
                                 </label>
                             </div>
                         </#if>
+                    </div>
+
+                    <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!} ${properties.kcFormGroupClass}">
+                        <div class="${properties.kcFormButtonsWrapperClass!}">
+                            <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
+                        </div>
+                    </div>
+
                         <div class="${properties.kcFormOptionsWrapperClass!} ${properties.kcFormGroupClass}">
                             <#if realm.resetPasswordAllowed>
                                 <span><a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
                             </#if>
                         </div>
-                    </div>
-
-                    <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                        <div class="${properties.kcFormButtonsWrapperClass!}">
-                            <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
-                        </div>
-                    </div>
             </form>
         </#if>
     <#elseif section = "info" >
