@@ -3,7 +3,7 @@ module.exports = function (grunt) {
       packageDotJson       = JSON.parse( fs.readFileSync('package.json', 'utf8') ),
       govukTemplateVersion = packageDotJson.dependencies["govuk_template_jinja"],
       govukElementsVersion = packageDotJson.dependencies["govuk-elements-sass"],
-      themeDirectory       = ["govuk", govukTemplateVersion, govukElementsVersion].join("__"),
+      themeDirectory       = ["govuk", govukTemplateVersion, govukElementsVersion].join("_"),
       css_output_paths_to_sass_paths = {};
 
   [

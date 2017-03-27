@@ -33,7 +33,7 @@
             <meta name="${meta?split('==')[0]}" content="${meta?split('==')[1]}"/>
         </#list>
     </#if>
-    <title><#nested "title"> - ${realm.displayName!'GOV.UK'}</title>
+    <title><#nested "title"> - ${realm.displayName?html!'GOV.UK'}</title>
 
     <#-- Start GOV.UK Template <head> content -->
 
@@ -107,8 +107,8 @@
       <div class="header-wrapper">
         <div class="header-global">
           <div class="header-logo">
-            <a href="${realm.displayNameHtml!'https://www.gov.uk'}" title="Go to the homepage" id="logo" class="content">
-              <img src="${url.resourcesPath}/vendor/govuk_template/images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt=""> ${realm.displayName!'GOV.UK'}
+            <a href="${realm.displayNameHtml?html!'https://www.gov.uk'}" title="Go to the ${realm.displayName?html!'GOV.UK'} homepage" id="logo" class="content">
+              <img src="${url.resourcesPath}/vendor/govuk_template/images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt=""> ${realm.displayName?html!'GOV.UK'}
             </a>
           </div>
         </div>
@@ -232,7 +232,6 @@
     <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
 
     <#-- End GOV.UK Template footer -->
-
 
 </body>
 </html>
