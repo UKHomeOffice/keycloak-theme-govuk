@@ -50,6 +50,30 @@ module.exports = function (grunt) {
           cwd: 'node_modules/govuk_frontend_toolkit/images/',
           src: '**',
           dest: themeDirectory+'/login/resources/vendor/govuk_frontend_toolkit/images/'
+        },
+        {
+          expand: true,
+          cwd: 'node_modules/govuk_frontend_toolkit/javascripts/govuk/',
+          src: 'selection-buttons.js',
+          dest: themeDirectory+'/login/resources/vendor/govuk_frontend_toolkit/javascripts/govuk/'
+        },
+        {
+          expand: true,
+          cwd: 'node_modules/jquery/dist/',
+          src: 'jquery.min.*',
+          dest: themeDirectory+'/login/resources/vendor/jquery/',
+          rename: function (dest, src) {
+            var destinationName;
+
+            if (src === "jquery.min.js") {
+              destinationName = dest + src.replace('jquery', 'jquery-'+packageDotJson.dependencies['jquery']);
+            }
+            else {
+              destinationName = dest + src;
+            }
+
+            return destinationName;
+          }
         }]
       },
       govuk_elements: {
