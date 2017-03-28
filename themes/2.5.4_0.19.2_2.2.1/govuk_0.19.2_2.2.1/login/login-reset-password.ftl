@@ -4,7 +4,11 @@
         ${msg("emailForgotTitle")}
     <#elseif section = "header">
         ${msg("emailForgotTitle")}
+    <#elseif section = "back">
+        <a class="link-back" href="${url.loginUrl}">${msg("backToLogin")}</a>
     <#elseif section = "form">
+        ${msg("emailInstruction")}
+
         <form id="kc-reset-password-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
             <div class="${properties.kcFormGroupClass!}">
                 <div class="${properties.kcLabelWrapperClass!}">
@@ -16,18 +20,10 @@
             </div>
 
             <div class="${properties.kcFormGroupClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
-                    <div class="${properties.kcFormOptionsWrapperClass!}">
-                        <span><a href="${url.loginUrl}">${msg("backToLogin")}</a></span>
-                    </div>
-                </div>
-
                 <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                     <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doSubmit")}"/>
                 </div>
             </div>
         </form>
-    <#elseif section = "info" >
-        ${msg("emailInstruction")}
     </#if>
 </@layout.registrationLayout>
