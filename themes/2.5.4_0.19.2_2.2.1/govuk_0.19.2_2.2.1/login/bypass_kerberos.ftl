@@ -4,6 +4,10 @@
     ${msg("kerberosNotConfiguredTitle")}
     <#elseif section = "header">
     ${msg("kerberosNotConfigured")}
+    <#elseif section = "back">
+    <#if client?? && client.baseUrl?has_content>
+        <a class="link-back" href="${client.baseUrl}">${msg("backToApplication")}</a>
+    </#if>
     <#elseif section = "form">
     <div id="kc-info-message">
         <!-- <h3>${msg("kerberosNotConfigured")}</h3> -->
@@ -15,9 +19,6 @@
                         <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="continue" id="kc-login" type="submit" value="${msg("doContinue")}"/>
                     </div>
                 </div>
-                <#if client?? && client.baseUrl?has_content>
-                    <p><a href="${client.baseUrl}">${msg("backToApplication")}</a></p>
-                </#if>
             </div>
         </form>
     </div>
