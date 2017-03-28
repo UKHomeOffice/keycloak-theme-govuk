@@ -4,12 +4,13 @@
         ${msg("errorTitle")}
     <#elseif section = "header">
         ${msg("errorTitleHtml")}
+    <#elseif section = "back">
+        <#if client?? && client.baseUrl?has_content>
+            <a class="link-back" id="backToApplication" href="${client.baseUrl}">${msg("backToApplication")}</a>
+        </#if>
     <#elseif section = "form">
         <div id="kc-error-message">
             <p class="instruction">${message.summary}</p>
-            <#if client?? && client.baseUrl?has_content>
-                <p><a id="backToApplication" href="${client.baseUrl}">${msg("backToApplication")}</a></p>
-            </#if>
         </div>
     </#if>
 </@layout.registrationLayout>
