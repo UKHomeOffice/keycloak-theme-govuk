@@ -5,7 +5,7 @@
     <#elseif section = "header">
         ${msg("loginTotpTitle")}
     <#elseif section = "form">
-<ol id="kc-totp-settings">
+<ol id="kc-totp-settings" class="list list-number">
     <li>
         <p>${msg("loginTotpStep1")}</p>
         </li>
@@ -20,6 +20,9 @@
     </ol>
     <form action="${url.loginAction}" class="${properties.kcFormClass!}" id="kc-totp-settings-form" method="post">
         <div class="${properties.kcFormGroupClass!}">
+            <div class="${properties.kcLabelWrapperClass!}">
+                <label for="totp" class="${properties.kcLabelClass!}">${msg("loginTotpOneTime")}</label>
+            </div>
             <div class="${properties.kcInputWrapperClass!}">
                 <input type="text" id="totp" name="totp" autocomplete="off" class="${properties.kcInputClass!}" />
             </div>
