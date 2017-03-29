@@ -67,6 +67,7 @@
         </#if>
 
         <#if realm.password && social.providers??>
+            <#-- This section of the theme has not yet been styled. Non-trivial user research, interaction design and content design work is required to develop a solution for login using 3rd-party identity providers. -->
             <div id="kc-social-providers">
                 <ul>
                     <#list social.providers as p>
