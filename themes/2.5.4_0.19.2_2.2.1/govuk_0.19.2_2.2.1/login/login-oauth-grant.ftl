@@ -7,7 +7,7 @@
 
         <div id="kc-oauth" class="content-area">
             <h2 class="heading-medium">${msg("oauthGrantRequest")}</h3>
-            <ul class="ist list-bullet">
+            <ul class="list list-bullet">
                 <#if oauth.claimsRequested??>
                     <li>
                         <span>
