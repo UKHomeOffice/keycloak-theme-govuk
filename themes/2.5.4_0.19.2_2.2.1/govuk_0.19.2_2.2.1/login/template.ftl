@@ -62,7 +62,7 @@
 
     <#-- GOV.UK Elements stylesheets -->
 
-    <!--[if gt IE 8]><!--><link href="${url.resourcesPath}/css/govuk_elements.css"  rel="stylesheet" type="text/css"><!--<![endif]-->
+    <!--[if gt IE 8]><!--><link href="${url.resourcesPath}/css/govuk_elements.css" rel="stylesheet" type="text/css"><!--<![endif]-->
     <!--[if IE 6]><link href="${url.resourcesPath}/css/govuk_elements-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 7]><link href="${url.resourcesPath}/css/govuk_elements-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
     <!--[if IE 8]><link href="${url.resourcesPath}/css/govuk_elements-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
