@@ -68,8 +68,7 @@
 
         <#if realm.password && social.providers??>
             <div id="kc-social-providers">
-                <h2 class="heading-medium">Sign in using an existing identity</h2>
-                <ul class="list list-bullet">
+                <ul>
                     <#list social.providers as p>
                         <li><a href="${p.loginUrl}" id="zocial-${p.alias}" class="zocial ${p.providerId}"> <span class="text">${p.displayName}</span></a></li>
                     </#list>
