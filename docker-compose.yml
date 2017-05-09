@@ -11,7 +11,8 @@ keycloak-db:
 keycloak:
   container_name: keycloak
   image: quay.io/ukhomeofficedigital/keycloak-mysql:latest
-  net: host
+  ports:
+  - "8080:8080"
   volumes:
   - ./.docker-compose/keycloak.env:/etc/secrets/keycloak.env
   - ./themes/2.5.4_0.19.2_2.2.1/govuk_0.19.2_2.2.1/:/opt/jboss/keycloak/themes/govuk_latest/
@@ -23,5 +24,6 @@ keycloak:
     MYSQL_PORT_3306_TCP_PORT: "3306"
     WAIT_ON_ADDR: "127.0.0.1"
     WAIT_ON_PORT: "3306"
+    PROXY_ADDRESS_FORWARDING: "true"
   command:
-  - --server-config=standalone.xml
+  - -b 0.0.0.0 --server-config=standalone.xml
