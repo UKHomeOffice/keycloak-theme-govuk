@@ -28,7 +28,6 @@ keycloak:
     MYSQL_PORT_3306_TCP_PORT: "3306"
     WAIT_ON_ADDR: "mariadb"
     WAIT_ON_PORT: "3306"
-    PROXY_ADDRESS_FORWARDING: "true"
   command:
   - -b 0.0.0.0 --server-config=standalone.xml
 
