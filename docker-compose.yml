@@ -1,0 +1,29 @@
+keycloak-db:
+  container_name: keycloak-db
+  image: mariadb:latest
+  net: container:keycloak
+  environment:
+    MYSQL_DATABASE: "keycloak"
+    MYSQL_PASSWORD: "password"
+    MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    MYSQL_USER: "keycloak"
+
+keycloak:
+  container_name: keycloak
+  image: quay.io/ukhomeofficedigital/keycloak-mysql:latest
+  ports:
+  - "8080:8080"
+  volumes:
+  - ./.docker-compose/keycloak.env:/etc/secrets/keycloak.env
+  - ./themes/2.5.4_0.19.2_2.2.1/govuk_0.19.2_2.2.1/:/opt/jboss/keycloak/themes/govuk_latest/
+  environment:
+    KEYCLOAK_ENVIRONMENT: "/etc/secrets/keycloak.env"
+    KEYCLOAK_PASSWORD: "admin"
+    KEYCLOAK_USER: "admin"
+    MYSQL_PORT_3306_TCP_ADDR: "127.0.0.1"
+    MYSQL_PORT_3306_TCP_PORT: "3306"
+    WAIT_ON_ADDR: "127.0.0.1"
+    WAIT_ON_PORT: "3306"
+    PROXY_ADDRESS_FORWARDING: "true"
+  command:
+  - -b 0.0.0.0 --server-config=standalone.xml
