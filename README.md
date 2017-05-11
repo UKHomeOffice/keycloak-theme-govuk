@@ -31,18 +31,73 @@ The theme will now be used for all Keycloak log in screens on your realm - inclu
 
 ## Developers
 
+To make it easier to test changes to the theme, this project includes a Docker container that provides a Keycloak instance with the theme available to it, and a MailDev installation for testing Keycloak’s e-mails.
+
+To run it, you’ll need [Docker Community Edition](https://docs.docker.com/engine/installation/).
+
+
+
+### Run the Keycloak Docker container
+
+1. Install Docker, and make sure its running.
+
+2. Clone this repository to our computer.
+
+3. In the root directory of the cloned repository, run this terminal command:
+
+        docker-compose up
+
+    This will bring up the Docker container with Keycloak and MailDev.
+
+
+
+### Log in to Keycloak Docker container
+
+1. Visit http://localhost:8080
+
+    (Keycloak currently redirects this to http://localhost:8080/auth/. If you visit it too early, you may see a 404 error. You may need to do a hard refresh (Ctrl+F5) to see the actual Keycloak home page.)
+
+2. Cick on “Administration Console”.
+
+3. Log in using the username `admin` and the password `admin`.
+
+
+
+### Use the GOV.UK theme in te Keycloak Docker container
+
+1. Log in to the Keycloak Docker container.
+
+2. Follow steps 2 and 3 in [the How to use instructions](#how-to-use) above.
+
+
+
+### Configure Keycloak to send e-mails to MailDev:
+
+1. Log in to the Keycloak Docker container.
+
+2. Go to the “Email” tab in “Realm Settings”
+
+3. Enter the following details:
+
+    - Host: maildev
+
+    - From: keycloak@keycloak
+
+4. Click on “Save”
+
+5. Click on “Admin” in the top-right-hand corner of the page, and click on “Manage Account”
+
+6. Add an e-mail address to the admin account.
+
+    It doesn’t matter what e-mail address you add, as all e-mails will be caught by MailDev. But you do need to add one, otherwise Keycloak will not send e-mails for this account.
+
+
+
+### TODO
+
 - Updating Keycloak theme files
 
 - Updating GOV.UK projects
 
 - Updating the GOV.UK themes
-
-- Testing
-
-	- Docker
-
-	- Keycloak (localhost:8080)
-
-	- Mailcatcher (MailDev) (localhost:8081)
-
 
