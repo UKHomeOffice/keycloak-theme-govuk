@@ -114,7 +114,7 @@
         </div>
         <div class="header-proposition">
           <div class="content">
-            <a href="/" id="proposition-name">${realm.displayName?html!''}</a>
+            <a href="#" id="proposition-name">${realm.displayName?html!''}</a>
           </div>
         </div>
       </div>
