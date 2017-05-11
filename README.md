@@ -13,19 +13,19 @@ This theme has been deployed to the UK Home Office hosting platform Keycloak Doc
 
 1. Sign into your realm's admin console.
 
-<img alt="" src="docs/images/use-1.png" width="512">
+<img alt="" src="docs/images/use-1.png" width="512" height="337">
 
 2. Go to the “Themes” tab in “Realm Settings”
 
-<img alt="" src="docs/images/use-2.png" width="512">
+<img alt="" src="docs/images/use-2.png" width="512" height="370">
 
 3. Select “govuk_latest” as your login theme, and click on “Save”
 
-<img alt="" src="docs/images/use-3.png" width="512">
+<img alt="" src="docs/images/use-3.png" width="512" height="370">
 
 The theme will now be used for all Keycloak log in screens on your realm - including logging in to the admin console. If you sign out, you should see the GOV.UK themed log in screen.
 
-<img alt="" src="docs/images/use-4.png" width="512">
+<img alt="" src="docs/images/use-4.png" width="512" height="421">
 
 
 
@@ -114,6 +114,8 @@ To run it, you’ll need to install [Docker Community Edition](https://docs.dock
     7. Enter your username (**admin**) in the text field, and submit the form.
 
     8. Visit MailDev, at http://localhost:8081. You should see a reset password e-mail from Keycloak.
+
+        <img alt="" src="docs/images/maildev.png" width="512" height="338">
 
 
 
