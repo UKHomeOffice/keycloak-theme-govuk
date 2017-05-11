@@ -49,9 +49,15 @@ To run it, you’ll need [Docker Community Edition](https://docs.docker.com/engi
 
     This will bring up the Docker container with Keycloak and MailDev.
 
+4. To stop the container, hit <kbd>CTRL</kbd> and <kbd>c</kbd>.
+
+5. To destroy the container, run this terminal command:
+
+        docker-compose down
 
 
-### Log in to Keycloak Docker container
+
+### Log in to the Keycloak Docker container
 
 1. Visit http://localhost:8080
 
@@ -63,7 +69,7 @@ To run it, you’ll need [Docker Community Edition](https://docs.docker.com/engi
 
 
 
-### Use the GOV.UK theme in te Keycloak Docker container
+### Use the GOV.UK theme in the Keycloak Docker container
 
 1. Log in to the Keycloak Docker container.
 
@@ -71,7 +77,7 @@ To run it, you’ll need [Docker Community Edition](https://docs.docker.com/engi
 
 
 
-### Configure Keycloak to send e-mails to MailDev:
+### View Keycloak e-mails with MailDev
 
 1. Log in to the Keycloak Docker container.
 
@@ -90,6 +96,24 @@ To run it, you’ll need [Docker Community Edition](https://docs.docker.com/engi
 6. Add an e-mail address to the admin account.
 
     It doesn’t matter what e-mail address you add, as all e-mails will be caught by MailDev. But you do need to add one, otherwise Keycloak will not send e-mails for this account.
+
+7. To check that the e-mail configuration is working:
+
+    1. Click on the “Back to Security Admin Console” link
+
+    2. Click on the “Login” tab in “Realm Settings”
+
+    3. Enable “Forgot password”
+
+    4. Click on “Save”
+
+    5. Sign out.
+
+    6. On the Keycloak log in screen, click on the “Forgot your password?” link
+
+    7. Enter “admin” in the text field, and submit the form.
+
+    8. Visit MailDev, at http://localhost:8081. You should see a forgot password e-mail from Keycloak.
 
 
 
