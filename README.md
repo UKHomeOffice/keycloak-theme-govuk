@@ -2,6 +2,10 @@
 
 A Keycloak theme using GOV.UK Template and Elements.
 
+- [How to use](#how-to-use)
+- [Developers](#developers)
+
+
 
 ## How to use
 
@@ -22,5 +26,23 @@ This theme has been deployed to the UK Home Office hosting platform Keycloak Doc
 The theme will now be used for all Keycloak log in screens on your realm - including logging in to the admin console. If you sign out, you should see the GOV.UK themed log in screen.
 
 ![](docs/images/use-4.png)
+
+
+
+## Developers
+
+- Updating Keycloak theme files
+
+- Updating GOV.UK projects
+
+- Updating the GOV.UK themes
+
+- Testing
+
+	- Docker
+
+	- Keycloak (localhost:8080)
+
+	- Mailcatcher (MailDev) (localhost:8081)
 
 
