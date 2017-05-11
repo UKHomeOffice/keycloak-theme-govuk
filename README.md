@@ -13,19 +13,19 @@ This theme has been deployed to the UK Home Office hosting platform Keycloak Doc
 
 1. Sign into your realm's admin console.
 
-![](docs/images/use-1.png)
+<img alt="" src="docs/images/use-1.png" width="512">
 
 2. Go to the “Themes” tab in “Realm Settings”
 
-![](docs/images/use-2.png)
+<img alt="" src="docs/images/use-2.png" width="512">
 
 3. Select “govuk_latest” as your login theme, and click on “Save”
 
-![](docs/images/use-3.png)
+<img alt="" src="docs/images/use-3.png" width="512">
 
 The theme will now be used for all Keycloak log in screens on your realm - including logging in to the admin console. If you sign out, you should see the GOV.UK themed log in screen.
 
-![](docs/images/use-4.png)
+<img alt="" src="docs/images/use-4.png" width="512">
 
 
 
