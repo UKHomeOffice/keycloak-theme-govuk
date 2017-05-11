@@ -67,11 +67,12 @@
         </#if>
 
         <#if realm.password && social.providers??>
-            <#-- This section of the theme has not yet been styled. Non-trivial user research, interaction design and content design work is required to develop a solution for login using 3rd-party identity providers. -->
+            <#-- This section of the theme has not yet been well styled. Non-trivial user research, interaction design and content design work is required to develop a solution for login using 3rd-party identity providers. -->
             <div id="kc-social-providers">
-                <ul>
+                <h2 class="heading-medium">${msg("socialProviders")}</h2>
+                <ul class="list">
                     <#list social.providers as p>
-                        <li><a href="${p.loginUrl}" id="zocial-${p.alias}" class="zocial ${p.providerId}"> <span class="text">${p.displayName}</span></a></li>
+                        <li><a href="${p.loginUrl}" id="zocial-${p.alias}" class="button zocial ${p.providerId}">${p.displayName}</a></li>
                     </#list>
                 </ul>
             </div>
