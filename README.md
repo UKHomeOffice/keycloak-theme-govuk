@@ -4,6 +4,10 @@ A Keycloak theme using GOV.UK Template and Elements.
 
 - [How to use](#how-to-use)
 - [Developers](#developers)
+	- [Run the Keycloak Docker container](#run-the-keycloak-docker-container)
+	- [Log in to the Keycloak Docker container](#log-in-to-the-keycloak-docker-container)
+	- [Use the GOV.UK theme in the Keycloak Docker container](#use-the-govuk-theme-in-the-keycloak-docker-container)
+	- [View Keycloak e-mails with MailDev](#view-keycloak-e-mails-with-maildev)
 
 
 
