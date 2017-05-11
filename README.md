@@ -33,15 +33,15 @@ The theme will now be used for all Keycloak log in screens on your realm - inclu
 
 To make it easier to test changes to the theme, this project includes a Docker container that provides a Keycloak instance with the theme available to it, and a MailDev installation for testing Keycloak’s e-mails.
 
-To run it, you’ll need [Docker Community Edition](https://docs.docker.com/engine/installation/).
+To run it, you’ll need to install [Docker Community Edition](https://docs.docker.com/engine/installation/).
 
 
 
 ### Run the Keycloak Docker container
 
-1. Install Docker, and make sure its running.
+1. Install Docker, and make sure it’s running.
 
-2. Clone this repository to our computer.
+2. Clone this repository to your computer.
 
 3. In the root directory of the cloned repository, run this terminal command:
 
@@ -65,7 +65,7 @@ To run it, you’ll need [Docker Community Edition](https://docs.docker.com/engi
 
 2. Cick on “Administration Console”.
 
-3. Log in using the username `admin` and the password `admin`.
+3. Log in using the username **admin** and the password **admin**.
 
 
 
@@ -85,9 +85,9 @@ To run it, you’ll need [Docker Community Edition](https://docs.docker.com/engi
 
 3. Enter the following details:
 
-    - Host: maildev
+    - Host: **maildev**
 
-    - From: keycloak@keycloak
+    - From: **keycloak@keycloak**
 
 4. Click on “Save”
 
@@ -111,9 +111,9 @@ To run it, you’ll need [Docker Community Edition](https://docs.docker.com/engi
 
     6. On the Keycloak log in screen, click on the “Forgot your password?” link
 
-    7. Enter “admin” in the text field, and submit the form.
+    7. Enter your username (**admin**) in the text field, and submit the form.
 
-    8. Visit MailDev, at http://localhost:8081. You should see a forgot password e-mail from Keycloak.
+    8. Visit MailDev, at http://localhost:8081. You should see a reset password e-mail from Keycloak.
 
 
 
