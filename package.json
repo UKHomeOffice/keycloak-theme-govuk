@@ -21,6 +21,7 @@
     "build:sass:govuk_elements-ie6": "npm-sass sass/govuk_elements-ie6.scss > govuk/login/resources/css/govuk_elements-ie6.css",
     "build:sass:govuk_elements-ie7": "npm-sass sass/govuk_elements-ie6.scss > govuk/login/resources/css/govuk_elements-ie7.css",
     "build:sass:govuk_elements-ie8": "npm-sass sass/govuk_elements-ie6.scss > govuk/login/resources/css/govuk_elements-ie8.css",
-    "dist": "tar -czf govuk.tar.gz govuk/"
+    "dist": "tar -czf govuk.tar.gz govuk/",
+    "clean": "rm -rf govuk/login/resources/ && rm govuk.tar.gz"
   }
 }
