@@ -19,7 +19,7 @@ keycloak:
   - maildev
   volumes:
   - ./.docker-compose/keycloak.env:/etc/secrets/keycloak.env
-  - ./themes/2.5.4_0.19.2_2.2.1/govuk_0.19.2_2.2.1/:/opt/jboss/keycloak/themes/govuk_latest/
+  - ./govuk/:/opt/jboss/keycloak/themes/govuk/
   environment:
     KEYCLOAK_ENVIRONMENT: "/etc/secrets/keycloak.env"
     KEYCLOAK_PASSWORD: "admin"

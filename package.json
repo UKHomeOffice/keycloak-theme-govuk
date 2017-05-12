@@ -1,0 +1,25 @@
+{
+  "name": "keycloak-theme-govuk",
+  "version": "0.4.0",
+  "devDependencies": {
+    "govuk-elements-sass": "2.2.1",
+    "govuk_template_jinja": "0.19.2",
+    "jquery": "1.11.3",
+    "npm-sass": "^2.2.0"
+  },
+  "scripts": {
+    "build": "npm run build:assets",
+    "build:assets": "npm run build:assets:govuk_template && npm run build:assets:govuk_frontend_toolkit && npm run build:assets:jquery && npm run build:assets:govuk_elements",
+    "build:assets:govuk_template": "mkdir -p govuk/login/resources/vendor && cp -R node_modules/govuk_template_jinja/assets/ govuk/login/resources/vendor/govuk_template",
+    "build:assets:govuk_frontend_toolkit": "mkdir -p govuk/login/resources/vendor/govuk_frontend_toolkit/javascripts && npm run build:assets:govuk_frontend_toolkit:images && npm run build:assets:govuk_frontend_toolkit:js",
+    "build:assets:govuk_frontend_toolkit:images": "cp -R node_modules/govuk_frontend_toolkit/images/ govuk/login/resources/vendor/govuk_frontend_toolkit/",
+    "build:assets:govuk_frontend_toolkit:js": "cp -R node_modules/govuk_frontend_toolkit/javascripts/govuk/ govuk/login/resources/vendor/govuk_frontend_toolkit/javascripts/",
+    "build:assets:jquery": "mkdir -p govuk/login/resources/vendor/jquery && cp -R node_modules/jquery/dist/jquery.min.* govuk/login/resources/vendor/jquery/",
+    "build:assets:govuk_elements": "mkdir -p govuk/login/resources/css && npm run build:assets:govuk_elements:default && npm run build:assets:govuk_elements:ie6 && npm run build:assets:govuk_elements:ie7 && npm run build:assets:govuk_elements:ie8",
+    "build:assets:govuk_elements:default": "npm-sass sass/govuk_elements.scss > govuk/login/resources/css/govuk_elements.css",
+    "build:assets:govuk_elements:ie6": "npm-sass sass/govuk_elements-ie6.scss > govuk/login/resources/css/govuk_elements-ie6.css",
+    "build:assets:govuk_elements:ie7": "npm-sass sass/govuk_elements-ie6.scss > govuk/login/resources/css/govuk_elements-ie7.css",
+    "build:assets:govuk_elements:ie8": "npm-sass sass/govuk_elements-ie6.scss > govuk/login/resources/css/govuk_elements-ie8.css",
+    "dist": "tar -czf govuk.tar.gz govuk/"
+  }
+}
