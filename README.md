@@ -33,7 +33,7 @@ The theme can be built using the following commands:
 $ npm install
 $ npm run build
 ```
-The theme will then be built at `/govuk`, ready for use in the included Keycloak dev environment.
+The theme will then be built at `/govuk`, ready for use in the local Keycloak dev server.
 
 ### Local Keycloak dev server
 A local Keycloak server for developing the theme is available as a Docker container.
@@ -46,7 +46,7 @@ $ docker-compose up
 ```
 The Keycloak server will now be available on <http://localhost:8080>.
 
-To enable the theme in the local Keycloak server, log in (using 'admin' as both username and password), and follow steps 2 and 3 in [the “Using” section above](#using).
+To enable the theme in the local Keycloak server, log in (using ‘**admin**’ as both username and password), and follow steps 2 and 3 in [the “Using” section above](#using).
 
 You will now see the govuk Keycloak theme when logging into the local Keycloak server. Changes made to the theme files in `/govuk` will be reflected in the server when you refresh the page in your browser.
 
@@ -79,23 +79,18 @@ To set up Keycloak to send e-mails to MailDev:
 
     2. Click on the “Login” tab in “Realm Settings”
 
-    3. Enable “Forgot password”
+    3. Enable “Forgot password”, and click on “Save”
 
-    4. Click on “Save”
+    4. Sign out.
 
-    5. Sign out.
+    5. On the Keycloak log in screen, click on the “Forgot your password?” link
 
-    6. On the Keycloak log in screen, click on the “Forgot your password?” link
+    6. Enter your username (**admin**) in the text field, and submit the form.
 
-    7. Enter your username (**admin**) in the text field, and submit the form.
-
-    8. Visit MailDev, at <http://localhost:8081>. You should see a reset password e-mail from Keycloak.
+    7. Visit MailDev, at <http://localhost:8081>. You should see a reset password e-mail from Keycloak.
 
         <img alt="" src="docs/images/maildev.png" width="512" height="338">
 
-A mock SMTP server is available on the host 'maildev' and will also need
-to be setup for any realms you wish to use it. Any emails sent to it can
-be viewed by visiting http://localhost:8081 .
 
 ## Releasing
 The theme can be packaged for release using the following command:
