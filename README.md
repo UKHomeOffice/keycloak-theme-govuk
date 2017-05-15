@@ -3,6 +3,9 @@ A Keycloak theme using GOV.UK Template and Elements.
 
 - [Using](#using)
 - [Developing](#developing)
+    - [Building](#building)
+    - [Local Keycloak server](#local-keycloak-server)
+    - [Testing Keycloak e-mails](#testing-keycloak-emails)
 - [Releasing](#releasing)
 
 ## Using
@@ -33,10 +36,10 @@ The theme can be built using the following commands:
 $ npm install
 $ npm run build
 ```
-The theme will then be built at `/govuk`, ready for use in the local Keycloak dev server.
+The theme will then be built at `/govuk`, ready for use in the local Keycloak server.
 
-### Local Keycloak dev server
-A local Keycloak server for developing the theme is available as a Docker container.
+### Local Keycloak server
+A local Keycloak server for developing and testing the theme is available as a Docker container.
 
 To bring up the server, make sure you’ve installed and started [Docker Community Edition](https://docs.docker.com/engine/installation/), then use the following commands:
 ```bash
@@ -44,18 +47,20 @@ $ npm install
 $ npm run build
 $ docker-compose up
 ```
-The Keycloak server will now be available on <http://localhost:8080>.
+The Keycloak server will now be available on <http://localhost:8080>. You can log into the Administration Console using “**admin**” as both username and password.
 
-To enable the theme in the local Keycloak server, log in (using “**admin**” as both username and password), and follow steps 2 and 3 in [the “Using” section above](#using).
+<img alt="" src="docs/images/keycloak-local.png" width="512" height="300">
 
-You will now see the GOV.UK Keycloak theme when logging into the local Keycloak server. Changes made to the theme files in `/govuk` will be reflected in the server when you refresh the page in your browser.
+To enable the GOV.UK theme in the local Keycloak server, follow steps 2 and 3 in [the “Using” section above](#using).
+
+You will now see the GOV.UK theme when logging into the local Keycloak server. Changes made to the theme files in `/govuk` will be visible on the local Keycloak server when you refresh the page in your browser.
 
 ### Testing Keycloak e-mails
-The local Keycloak dev server includes MailDev, a mock SMTP server that you can use to receive and view Keycloak e-mails. It is available on <http://localhost:8081>.
+The local Keycloak server includes MailDev, a mock SMTP server that you can use to receive and view Keycloak e-mails. It is available on <http://localhost:8081>.
 
-To set up Keycloak to send e-mails to MailDev:
+To set up the local Keycloak server to send e-mails to MailDev:
 
-1. Log in to the local Keycloak dev server.
+1. Log in to [the local Keycloak server](http://localhost:8080).
 
 2. Go to the “Email” tab in “Realm Settings”
 
@@ -73,7 +78,7 @@ To set up Keycloak to send e-mails to MailDev:
 
     It doesn’t matter what e-mail address you add, as all e-mails will be caught by MailDev. But you do need to add one, otherwise Keycloak will not send e-mails for this account.
 
-7. To check that the e-mail configuration is working:
+The local Keycloak server should now be set up to send e-mails to MailDev. To check that it’s working:
 
     1. Click on the “Back to Security Admin Console” link
 
@@ -87,7 +92,7 @@ To set up Keycloak to send e-mails to MailDev:
 
     6. Enter your username (**admin**) in the text field, and submit the form.
 
-    7. Visit MailDev, at <http://localhost:8081>. You should see a reset password e-mail from Keycloak.
+    7. Visit [MailDev](http://localhost:8081). You should see a reset password e-mail from Keycloak.
 
         <img alt="" src="docs/images/maildev.png" width="512" height="338">
 
