@@ -18,3 +18,10 @@ $path: "../vendor/govuk_frontend_toolkit/images/";// Path to Frontend Toolkit im
 @import 'govuk-elements-sass/public/sass/elements/_panels';
 @import 'govuk-elements-sass/public/sass/elements/forms/_form-validation';
 @import 'govuk-elements-sass/public/sass/elements/forms/_form-block-labels';
+
+.list.horizontal li {
+  display: list-item;
+  @media (min-width: 641px) {
+    display: inline;
+  }
+}
