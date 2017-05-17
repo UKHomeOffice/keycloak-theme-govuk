@@ -112,11 +112,17 @@
             </a>
           </div>
         </div>
-        <div class="header-proposition">
-          <div class="content">
-            <a href="#" id="proposition-name">${realm.displayName?html!''}</a>
+        <#if realm.displayNameHtml?? || realm.displayName??>
+          <div class="header-proposition">
+            <div class="content">
+              <#if realm.displayNameHtml?? && realm.displayNameHtml != realm.displayName>
+                ${realm.displayNameHtml}
+              <#elseif realm.displayName??>
+                <a href="/" id="proposition-name">${realm.displayName}</a>
+              </#if>
+            </div>
           </div>
-        </div>
+        </#if>
       </div>
     </header>
 
