@@ -1,6 +1,6 @@
 mariadb:
   container_name: mariadb
-  image: mariadb:latest
+  image: mariadb:10.1.23
   ports:
   - "3306"
   environment:
@@ -11,7 +11,7 @@ mariadb:
 
 keycloak:
   container_name: keycloak
-  image: quay.io/ukhomeofficedigital/keycloak-mysql:latest
+  image: quay.io/ukhomeofficedigital/keycloak-mysql:v3.1.0
   ports:
   - "8080:8080"
   links:
@@ -33,7 +33,7 @@ keycloak:
 
 maildev:
   container_name: maildev
-  image: djfarrelly/maildev
+  image: djfarrelly/maildev:1.0.0-rc2
   ports:
   - "8081:80"
   - "25"
