@@ -103,15 +103,26 @@
         <p>GOV.UK uses cookies to make the site simpler. <a href=\"https://www.gov.uk/help/cookies\">Find out more about cookies</a></p>
       
     </div>
-    <header role="banner" id="global-header" class="${properties.kcHeaderClass!}">
+    <header role="banner" id="global-header" class="${properties.kcHeaderClass!} with-proposition">
       <div class="header-wrapper">
         <div class="header-global">
           <div class="header-logo">
-            <a href="${realm.displayNameHtml?html!'https://www.gov.uk'}" title="Go to the ${realm.displayName?html!'GOV.UK'} homepage" id="logo" class="content">
-              <img src="${url.resourcesPath}/vendor/govuk_template/images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt=""> ${realm.displayName?html!'GOV.UK'}
+            <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+              <img src="${url.resourcesPath}/vendor/govuk_template/images/gov.uk_logotype_crown_invert_trans.png?0.19.2" width="36" height="32" alt=""> GOV.UK
             </a>
           </div>
         </div>
+        <#if realm.displayNameHtml?? || realm.displayName??>
+          <div class="header-proposition">
+            <div class="content">
+              <#if realm.displayNameHtml?? && realm.displayNameHtml != realm.displayName>
+                ${realm.displayNameHtml}
+              <#elseif realm.displayName??>
+                <a href="/" id="proposition-name">${realm.displayName}</a>
+              </#if>
+            </div>
+          </div>
+        </#if>
       </div>
     </header>
 
