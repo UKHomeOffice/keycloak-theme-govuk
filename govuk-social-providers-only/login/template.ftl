@@ -191,26 +191,24 @@
                                     </#if>
                                 </#if>
 
-                                <div id="kc-form" class="${properties.kcFormAreaClass!}">
-                                    <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
-                                        <#nested "form">
-                                    </div>
-                                </div>
+                                <#if displayInfo>
+                                  <div id="kc-info" class="${properties.kcInfoAreaClass!}">
+                                      <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
+                                          <#nested "info">
+                                      </div>
+                                  </div>
+                                <#else>
+                                  <div id="kc-form" class="${properties.kcFormAreaClass!}">
+                                      <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
+                                          <#nested "form">
+                                      </div>
+                                  </div>
+                                </#if>
 
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="column-one-third">
-                <#if displayInfo>
-                    <div id="kc-info" class="${properties.kcInfoAreaClass!}">
-                        <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
-                            <#nested "info">
-                        </div>
-                    </div>
-                </#if>
             </div>
         </div>
     </main>
