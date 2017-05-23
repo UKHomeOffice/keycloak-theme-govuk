@@ -248,6 +248,7 @@
     <#-- Enable GOV.UK Front-End Toolkit checkboxes -->
     <script src="${url.resourcesPath}/vendor/jquery/jquery.min.js"></script><#-- GOV.UK Front-End Toolkit selection buttons (radios and checkboxes) currently depend on jQuery -->
     <script src="${url.resourcesPath}/vendor/govuk_frontend_toolkit/javascripts/govuk/selection-buttons.js"></script>
+    <script src="${url.resourcesPath}/javascripts/details.polyfill.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function (event) {
         new GOVUK.SelectionButtons($('label input[type=checkbox]'));
     });
