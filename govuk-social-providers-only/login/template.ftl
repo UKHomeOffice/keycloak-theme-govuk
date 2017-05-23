@@ -197,13 +197,12 @@
                                           <#nested "info">
                                       </div>
                                   </div>
-                                <#else>
-                                  <div id="kc-form" class="${properties.kcFormAreaClass!}">
-                                      <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
-                                          <#nested "form">
-                                      </div>
-                                  </div>
                                 </#if>
+                                <div id="kc-form" class="${properties.kcFormAreaClass!}">
+                                    <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
+                                        <#nested "form">
+                                    </div>
+                                </div>
 
                             </div>
                         </div>
