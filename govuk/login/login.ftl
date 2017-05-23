@@ -54,7 +54,7 @@
 
                         <div class="${properties.kcFormOptionsWrapperClass!} ${properties.kcFormGroupClass}">
                             <#if realm.resetPasswordAllowed>
-                                <span><a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></span>
+                                <p><a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></p>
                             </#if>
                         </div>
             </form>
@@ -62,7 +62,8 @@
     <#elseif section = "info" >
         <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
             <div id="kc-registration">
-                <span>${msg("noAccount")} <a href="${url.registrationUrl}">${msg("registerLink")}</a></span>
+                <h2 class="heading-medium">${msg("noAccount")}</h2>
+                <p><a href="${url.registrationUrl}">${msg("registerLink")}</a></p>
             </div>
         </#if>
 
