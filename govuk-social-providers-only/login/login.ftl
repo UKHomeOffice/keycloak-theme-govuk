@@ -60,12 +60,6 @@
             </form>
         </#if>
     <#elseif section = "info" >
-        <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
-            <div id="kc-registration">
-                <span>${msg("noAccount")} <a href="${url.registrationUrl}">${msg("registerLink")}</a></span>
-            </div>
-        </#if>
-
         <#if realm.password && social.providers??>
             <div id="kc-social-providers">
                 <ul class="list horizontal">
@@ -73,6 +67,13 @@
                         <li><a href="${p.loginUrl}" id="zocial-${p.alias}" class="button zocial ${p.providerId}">${p.displayName}</a></li>
                     </#list>
                 </ul>
+            </div>
+        </#if>
+
+        <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
+            <div id="kc-registration">
+                <h2 class="heading-medium">${msg("noAccount")}</h2>
+                <span><a href="${url.registrationUrl}">${msg("registerLink")}</a></span>
             </div>
         </#if>
     </#if>
