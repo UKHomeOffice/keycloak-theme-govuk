@@ -38,4 +38,4 @@ jspm_packages
 
 # Built files
 govuk/login/resources/
-*.tar.gz
+dist/
