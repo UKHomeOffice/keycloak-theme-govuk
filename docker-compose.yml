@@ -20,6 +20,7 @@ keycloak:
   volumes:
   - ./.docker-compose/keycloak.env:/etc/secrets/keycloak.env
   - ./govuk/:/opt/jboss/keycloak/themes/govuk/
+  - ./govuk-internal/:/opt/jboss/keycloak/themes/govuk-internal/
   - ./govuk-social-providers/:/opt/jboss/keycloak/themes/govuk-social-providers/
   environment:
     KEYCLOAK_ENVIRONMENT: "/etc/secrets/keycloak.env"
