@@ -26,6 +26,6 @@
     "dist:govuk": "tar -czf dist/govuk.tar.gz govuk/",
     "dist:govuk-social-providers": "tar -czf dist/govuk-social-providers.tar.gz govuk-social-providers/",
     "dist:govuk-internal": "tar -czf dist/govuk--internal.tar.gz govuk--internal/",
-    "clean": "rm -rf govuk/login/resources/ dist/"
+    "clean": "rm -rf govuk/login/resources/ govuk-internal/login/resources dist/"
   }
 }
