@@ -35,13 +35,13 @@
                     <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
                         <#if realm.rememberMe && !usernameEditDisabled??>
                             <div class="checkbox ${properties.kcFormGroupClass}">
-                                <div class="${properties.kcCheckboxLabelClass}">
+                                <div class="multiple-choice">
                                     <#if login.rememberMe??>
                                         <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3" checked>
-                                        <label for="rememberMe">${msg("rememberMe")}</label>
+                                        <label for="rememberMe" class="${properties.kcCheckboxLabelClass}">${msg("rememberMe")}</label>
                                     <#else>
                                         <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3">
-                                        <label for="rememberMe">${msg("rememberMe")}</label>
+                                        <label for="rememberMe" class="${properties.kcCheckboxLabelClass}">${msg("rememberMe")}</label>
                                     </#if>
                                 </div>
                             </div>
