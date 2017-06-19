@@ -1,6 +1,6 @@
 {
   "name": "keycloak-theme-govuk",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "devDependencies": {
     "govuk-elements-sass": "3.1.0",
     "govuk_template_jinja": "0.22.1",
