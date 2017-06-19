@@ -22,7 +22,7 @@
 </#if>
 
 <!--[if lt IE 9]><html class="lte-ie8 ${properties.kcHtmlClass!}" lang="${LANG_CODE}"><![endif]-->
-<!--[if gt IE 8]><!--><html lang="${LANG_CODE}"><!--<![endif]-->
+<!--[if gt IE 8]><!--><html class="${properties.kcHtmlClass!}" lang="${LANG_CODE}"><!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
