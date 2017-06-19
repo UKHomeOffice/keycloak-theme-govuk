@@ -20,3 +20,14 @@
 	background: url("../vendor/govuk_template/images/gov.uk_logotype_crown_invert_trans.png?0.19.2") no-repeat;
 	visibility: hidden;
 }
+
+#logo:before {// For IE 8, which doesn’s support ::before
+	content:'';
+	display: inline-block;
+	width: 36px;
+	height: 32px;
+	margin: 2px 1px 0 0;
+	vertical-align: bottom;
+	background: url("../vendor/govuk_template/images/gov.uk_logotype_crown_invert_trans.png?0.19.2") no-repeat;
+	visibility: hidden;
+}

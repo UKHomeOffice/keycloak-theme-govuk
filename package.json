@@ -2,20 +2,18 @@
   "name": "keycloak-theme-govuk",
   "version": "1.0.0",
   "devDependencies": {
-    "govuk-elements-sass": "2.2.1",
-    "govuk_template_jinja": "0.19.2",
-    "jquery": "1.11.3",
+    "govuk-elements-sass": "3.1.0",
+    "govuk_template_jinja": "0.22.1",
     "npm-run-all": "^4.0.2",
-    "npm-sass": "^2.2.0"
+    "npm-sass": "^2.2.1"
   },
   "scripts": {
     "build": "npm-run-all build:assets build:sass",
-    "build:assets": "npm-run-all build:assets:govuk_template build:assets:govuk_frontend_toolkit build:assets:jquery build:sass",
+    "build:assets": "npm-run-all build:assets:govuk_template build:assets:govuk_frontend_toolkit build:sass",
     "build:assets:govuk_template": "mkdir -p govuk/login/resources/vendor && cp -R node_modules/govuk_template_jinja/assets/ govuk/login/resources/vendor/govuk_template",
     "build:assets:govuk_frontend_toolkit": "mkdir -p govuk/login/resources/vendor/govuk_frontend_toolkit/javascripts && npm-run-all build:assets:govuk_frontend_toolkit:images build:assets:govuk_frontend_toolkit:js",
     "build:assets:govuk_frontend_toolkit:images": "cp -R node_modules/govuk_frontend_toolkit/images/ govuk/login/resources/vendor/govuk_frontend_toolkit/",
     "build:assets:govuk_frontend_toolkit:js": "cp -R node_modules/govuk_frontend_toolkit/javascripts/govuk/ govuk/login/resources/vendor/govuk_frontend_toolkit/javascripts/",
-    "build:assets:jquery": "mkdir -p govuk/login/resources/vendor/jquery && cp -R node_modules/jquery/dist/jquery.min.* govuk/login/resources/vendor/jquery/",
     "build:sass": "mkdir -p govuk/login/resources/css && mkdir -p govuk-internal/login/resources/css && npm-run-all build:sass:govuk_elements build:sass:govuk_elements-ie6 build:sass:govuk_elements-ie7 build:sass:govuk_elements-ie8 build:sass:govuk-internal",
     "build:sass:govuk_elements": "npm-sass sass/govuk_elements.scss > govuk/login/resources/css/govuk_elements.css",
     "build:sass:govuk_elements-ie6": "npm-sass sass/govuk_elements-ie6.scss > govuk/login/resources/css/govuk_elements-ie6.css",
