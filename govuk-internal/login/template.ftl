@@ -1,5 +1,5 @@
 <#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
 <#-- Attempt to reverse-engineer code for page’s current language, as Keycloak does not currently make this available -->
 <#assign LANG_CODE = "en">
@@ -21,7 +21,8 @@
     </#list>
 </#if>
 
-<html xmlns="http://www.w3.org/1999/xhtml" class="${properties.kcHtmlClass!}" lang="${LANG_CODE}">
+<!--[if lt IE 9]><html class="lte-ie8 ${properties.kcHtmlClass!}" lang="${LANG_CODE}"><![endif]-->
+<!--[if gt IE 8]><!--><html lang="${LANG_CODE}"><!--<![endif]-->
 
 <head>
     <meta charset="utf-8">
@@ -45,7 +46,7 @@
 
     <!--[if IE 8]><link href="${url.resourcesPath}/vendor/govuk_template/stylesheets/fonts-ie8.css?0.19.2" media="all" rel="stylesheet" /><![endif]-->
     <!--[if gte IE 9]><!--><link href="${url.resourcesPath}/vendor/govuk_template/stylesheets/fonts.css?0.19.2" media="all" rel="stylesheet" /><!--<![endif]-->
-    <!--[if lt IE 9]><script src="{{ asset_path }}javascripts/ie.js?0.19.2"></script><![endif]-->
+    <!--[if lt IE 9]><script src="${url.resourcesPath}/vendor/govuk_template/javascripts/ie.js?0.19.2"></script><![endif]-->
 
     <link rel="shortcut icon" href="${url.resourcesPath}/vendor/govuk_template/images/favicon.ico?0.19.2" type="image/x-icon" />
     <link rel="mask-icon" href="${url.resourcesPath}/vendor/govuk_template/images/gov.uk_logotype_crown.svg?0.19.2" color="#0b0c0c">
@@ -99,9 +100,9 @@
       </div>
     </div>
     <div id="global-cookie-message">
-      
+
         <p>GOV.UK uses cookies to make the site simpler. <a href=\"https://www.gov.uk/help/cookies\">Find out more about cookies</a></p>
-      
+
     </div>
     <header role="banner" id="global-header" class="${properties.kcHeaderClass!}">
       <div class="header-wrapper">
@@ -219,9 +220,9 @@
 
             <div class="open-government-licence">
               <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-              
+
                 <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-              
+
             </div>
           </div>
 
