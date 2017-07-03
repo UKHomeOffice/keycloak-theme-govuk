@@ -1,4 +1,8 @@
 $is-ie: true;
 $ie-version: 8;
- 
+
 @import "govuk_elements";
+
+.lte-ie8 input.form-control[type=password] {
+	font-family: sans-serif;// Avoid bug that occurs on some versions of IE 8 (including that on POISE desktops) where the dots in the password field are invisible
+}
