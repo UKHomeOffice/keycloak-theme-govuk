@@ -31,3 +31,7 @@
 	background: url("../vendor/govuk_template/images/gov.uk_logotype_crown_invert_trans.png?0.19.2") no-repeat;
 	visibility: hidden;
 }
+
+.lte-ie8 input.form-control[type=password] {
+	font-family: sans-serif;// Avoid bug that occurs on some versions of IE 8 (including that on POISE desktops) where the dots in the password field are invisible
+}
