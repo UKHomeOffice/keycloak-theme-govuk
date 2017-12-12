@@ -40,3 +40,6 @@ jspm_packages
 govuk/login/resources/
 govuk-internal/login/resources/
 dist/
+
+# npm package-lock.json file (because maybe it has issues? https://github.com/npm/npm/issues/18144, https://github.com/npm/npm/issues/18375)
+package-lock.json
