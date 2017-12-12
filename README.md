@@ -80,21 +80,21 @@ To set up the local Keycloak server to send e-mails to MailDev:
 
 The local Keycloak server should now be set up to send e-mails to MailDev. To check that it’s working:
 
-    1. Click on the “Back to Security Admin Console” link
+1. Click on the “Back to Security Admin Console” link
 
-    2. Click on the “Login” tab in “Realm Settings”
+2. Click on the “Login” tab in “Realm Settings”
 
-    3. Enable “Forgot password”, and click on “Save”
+3. Enable “Forgot password”, and click on “Save”
 
-    4. Sign out.
+4. Sign out.
 
-    5. On the Keycloak log in screen, click on the “Forgot your password?” link
+5. On the Keycloak log in screen, click on the “Forgot your password?” link
 
-    6. Enter your username (**admin**) in the text field, and submit the form.
+6. Enter your username (**admin**) in the text field, and submit the form.
 
-    7. Visit [MailDev](http://localhost:8081). You should see a reset password e-mail from Keycloak.
+7. Visit [MailDev](http://localhost:8081). You should see a reset password e-mail from Keycloak.
 
-        <img alt="" src="docs/images/maildev.png" width="512" height="338">
+    <img alt="" src="docs/images/maildev.png" width="512" height="338">
 
 
 ## Releasing
