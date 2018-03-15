@@ -34,7 +34,7 @@
             <meta name="${meta?split('==')[0]}" content="${meta?split('==')[1]}"/>
         </#list>
     </#if>
-    <title><#nested "title"> - ${realm.displayName?html!'GOV.UK'}</title>
+    <title><#nested "title"> - ${realm.displayName!'GOV.UK'}</title>
 
     <#-- Start GOV.UK Template <head> content -->
 
