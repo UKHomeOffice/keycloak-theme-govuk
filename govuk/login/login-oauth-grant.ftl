@@ -3,7 +3,7 @@
     <#if section = "title">
         ${msg("oauthGrantTitle")}
     <#elseif section = "form">
-        ${msg("oauthGrantTitleHtml",(realm.displayName!''))} <strong><#if client.name??>${advancedMsg(client.name)}<#else>${client.clientId}</#if></strong>.
+        ${msg("oauthGrantTitleHtml",(realm.displayName!''))?no_esc} <strong><#if client.name??>${advancedMsg(client.name)}<#else>${client.clientId}</#if></strong>.
 
         <div id="kc-oauth" class="content-area">
             <h2 class="heading-medium">${msg("oauthGrantRequest")}</h3>

@@ -34,7 +34,7 @@
             <meta name="${meta?split('==')[0]}" content="${meta?split('==')[1]}"/>
         </#list>
     </#if>
-    <title><#nested "title"> - ${realm.displayName?html!'GOV.UK'}</title>
+    <title><#nested "title"> - ${realm.displayName!'GOV.UK'}</title>
 
     <#-- Start GOV.UK Template <head> content -->
 
@@ -117,7 +117,7 @@
           <div class="header-proposition">
             <div class="content">
               <#if realm.displayNameHtml?? && realm.displayNameHtml != realm.displayName>
-                ${realm.displayNameHtml}
+                ${realm.displayNameHtml?no_esc}
               <#elseif realm.displayName??>
                 <a href="/" id="proposition-name">${realm.displayName}</a>
               </#if>
