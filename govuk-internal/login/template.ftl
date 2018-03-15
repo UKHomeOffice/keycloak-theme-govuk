@@ -109,7 +109,7 @@
         <div class="header-global">
           <div class="header-logo">
             <#if realm.displayNameHtml?? && realm.displayNameHtml != realm.displayName>
-              ${realm.displayNameHtml}
+              ${realm.displayNameHtml?no_esc}
             <#elseif realm.displayName??>
               <a href="/" id="logo" class="content" title="Go to the ${realm.displayName} homepage"> ${realm.displayName}</a>
             <#else>

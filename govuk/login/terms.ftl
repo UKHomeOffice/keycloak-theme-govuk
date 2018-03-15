@@ -3,7 +3,7 @@
     <#if section = "title">
     ${msg("termsTitle")}
     <#elseif section = "header">
-    ${msg("termsTitleHtml")}
+    ${msg("termsTitleHtml")?no_esc}
     <#elseif section = "form">
     <p>${msg("termsIntro")}</p>
     

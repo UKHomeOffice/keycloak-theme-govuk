@@ -3,7 +3,7 @@
     <#if section = "title">
         ${msg("registerWithTitle",(realm.displayName!''))}
     <#elseif section = "header">
-        ${msg("registerWithTitleHtml",(realm.displayNameHtml!''))}
+        ${msg("registerWithTitleHtml",(realm.displayNameHtml!''))?no_esc}
     <#elseif section = "back">
         <a class="link-back" href="${url.loginUrl}">${msg("backToLogin")}</a>
     <#elseif section = "form">

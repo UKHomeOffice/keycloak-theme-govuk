@@ -3,7 +3,7 @@
     <#if section = "title">
         ${msg("errorTitle")}
     <#elseif section = "header">
-        ${msg("errorTitleHtml")}
+        ${msg("errorTitleHtml")?no_esc}
     <#elseif section = "back">
         <#if client?? && client.baseUrl?has_content>
             <a class="link-back" id="backToApplication" href="${client.baseUrl}">${msg("backToApplication")}</a>
