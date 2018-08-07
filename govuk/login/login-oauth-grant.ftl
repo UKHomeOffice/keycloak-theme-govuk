@@ -1,12 +1,14 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout bodyClass="oauth"; section>
     <#if section = "title">
-        ${msg("oauthGrantTitle")}
+        <#if client.name?has_content>
+            ${msg("oauthGrantTitle",advancedMsg(client.name))}
+        <#else>
+            ${msg("oauthGrantTitle",client.clientId)}
+        </#if>
     <#elseif section = "form">
-        ${msg("oauthGrantTitleHtml",(realm.displayName!''))?no_esc} <strong><#if client.name??>${advancedMsg(client.name)}<#else>${client.clientId}</#if></strong>.
-
         <div id="kc-oauth" class="content-area">
-            <h2 class="heading-medium">${msg("oauthGrantRequest")}</h3>
+            <h2 class="heading-medium">${msg("oauthGrantRequest")}</h2>
             <ul class="list list-bullet">
                 <#if oauth.claimsRequested??>
                     <li>
