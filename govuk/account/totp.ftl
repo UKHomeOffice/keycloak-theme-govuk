@@ -2,7 +2,7 @@
 <@layout.mainLayout active='totp' bodyClass='totp'; section>
 
     <#if totp.enabled>
-<h2>${msg("authenticatorTitle")}</h2>
+<h2 class="heading-large">${msg("authenticatorTitle")}</h2>
 
 <table class="table table-bordered table-striped">
     <thead>
@@ -24,28 +24,28 @@
         </tbody>
     </table>
     <#else>
-<h2>${msg("authenticatorTitle")}</h2>
+<h2 class="heading-large">${msg("authenticatorTitle")}</h2>
 
 <hr/>
 
-<ol>
-    <li>
+<div>
+    <div>
         <p>${msg("totpStep1")}</p>
 
         <ul>
             <#list totp.policy.supportedApplications as app>
-            <li>${app}</li>
+            <li class="list-bullet">${app}</li>
             </#list>
         </ul>
-    </li>
+    </div>
 
     <#if mode?? && mode = "manual">
-        <li>
+        <div>
             <p>${msg("totpManualStep2")}</p>
             <p><span id="kc-totp-secret-key">${totp.totpSecretEncoded}</span></p>
             <p><a href="${totp.qrUrl}" id="mode-barcode">${msg("totpScanBarcode")}</a></p>
-        </li>
-        <li>
+        </div>
+        <div>
             <p>${msg("totpManualStep3")}</p>
             <ul>
                 <li id="kc-totp-type">${msg("totpType")}: ${msg("totp." + totp.policy.type)}</li>
@@ -57,18 +57,18 @@
                     <li id="kc-totp-counter">${msg("totpCounter")}: ${totp.policy.initialCounter}</li>
                 </#if>
             </ul>
-        </li>
+        </div>
     <#else>
-        <li>
+        <div>
             <p>${msg("totpStep2")}</p>
             <p><img src="data:image/png;base64, ${totp.totpSecretQrCode}" alt="Figure: Barcode"></p>
             <p><a href="${totp.manualUrl}" id="mode-manual">${msg("totpUnableToScan")}</a></p>
-        </li>
+        </div>
     </#if>
-    <li>
+    <div>
         <p>${msg("totpStep3")}</p>
-    </li>
-</ol>
+    </div>
+</div>
 
 <hr/>
 
@@ -76,11 +76,11 @@
     <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
     <div class="form-group">
         <div class="col-sm-2 col-md-2">
-            <label for="totp" class="control-label">${msg("authenticatorCode")}</label>
+            <label for="totp" class="${properties.kcLabelClass!}">${msg("authenticatorCode")}</label>
             </div>
 
         <div class="col-sm-10 col-md-10">
-            <input type="text" class="form-control" id="totp" name="totp" autocomplete="off" autofocus autocomplete="off">
+            <input type="text" class="${properties.kcInputClass!}" id="totp" name="totp" autocomplete="off" autofocus autocomplete="off">
             <input type="hidden" id="totpSecret" name="totpSecret" value="${totp.totpSecret}" />
             </div>
         </div>

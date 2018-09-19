@@ -3,18 +3,18 @@
 
     <div class="row">
         <div class="col-md-10">
-            <h2>${msg("sessionsHtmlTitle")}</h2>
+            <h2 class="heading-large">${msg("sessionsHtmlTitle")}</h2>
         </div>
     </div>
 
-    <table class="table table-striped table-bordered">
+    <table>
         <thead>
         <tr>
-            <td>${msg("ip")}</td>
-            <td>${msg("started")}</td>
-            <td>${msg("lastAccess")}</td>
-            <td>${msg("expires")}</td>
-            <td>${msg("clients")}</td>
+            <th>${msg("ip")}</th>
+            <th>${msg("started")}</th>
+            <th>${msg("lastAccess")}</th>
+            <th>${msg("expires")}</th>
+            <th>${msg("clients")}</th>
         </tr>
         </thead>
 
@@ -33,12 +33,10 @@
             </tr>
         </#list>
         </tbody>
-
     </table>
-
-    <form action="${url.sessionsUrl}" method="post">
+    <form action="${url.sessionsUrl}" method="post" style="margin-top:15px;">
         <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
-        <button id="logout-all-sessions" class="btn btn-default">${msg("doLogOutAllSessions")}</button>
+        <button id="logout-all-sessions" class="${properties.kcButtonClass!}">${msg("doLogOutAllSessions")}</button>
     </form>
 
 </@layout.mainLayout>

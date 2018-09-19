@@ -3,10 +3,10 @@
 
     <div class="row">
         <div class="col-md-10">
-            <h2>${msg("editAccountHtmlTitle")}</h2>
+            <h2 class="heading-large">${msg("editAccountHtmlTitle")}</h2>
         </div>
         <div class="col-md-2 subtitle">
-            <span class="subtitle"><span class="required">*</span> ${msg("requiredFields")}</span>
+            <span class="subtitle form-hint"><span class="required">*</span> ${msg("requiredFields")}</span>
         </div>
     </div>
 
@@ -17,42 +17,42 @@
         <#if !realm.registrationEmailAsUsername>
             <div class="form-group ${messagesPerField.printIfExists('username','has-error')} ${properties.kcFormGroupClass!}">
                 <div class="col-sm-2 col-md-2">
-                    <label for="username" class="control-label">${msg("username")}</label> <#if realm.editUsernameAllowed><span class="required">*</span></#if>
+                    <label for="username" class="${properties.kcLabelClass!}">${msg("username")}</label> <#if realm.editUsernameAllowed><span class="required">*</span></#if>
                 </div>
 
                 <div class="col-sm-10 col-md-10">
-                    <input type="text" class="form-control" id="username" name="username" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')}"/>
+                    <input type="text" class="${properties.kcInputClass!}" id="username" name="username" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')}"/>
                 </div>
             </div>
         </#if>
 
         <div class="form-group ${messagesPerField.printIfExists('email','has-error')}">
             <div class="col-sm-2 col-md-2">
-            <label for="email" class="control-label">${msg("email")}</label> <span class="required">*</span>
+            <label for="email" class="${properties.kcLabelClass!}">${msg("email")} *</label>
             </div>
 
             <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" id="email" name="email" autofocus value="${(account.email!'')}"/>
+                <input type="text" class="${properties.kcInputClass!}" id="email" name="email" autofocus value="${(account.email!'')}"/>
             </div>
         </div>
 
         <div class="form-group ${messagesPerField.printIfExists('firstName','has-error')}">
             <div class="col-sm-2 col-md-2">
-                <label for="firstName" class="control-label">${msg("firstName")}</label> <span class="required">*</span>
+                <label for="firstName" class="${properties.kcLabelClass!}">${msg("firstName")} *</label>
             </div>
 
             <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" id="firstName" name="firstName" value="${(account.firstName!'')}"/>
+                <input type="text" class="${properties.kcInputClass!}" id="firstName" name="firstName" value="${(account.firstName!'')}"/>
             </div>
         </div>
 
         <div class="form-group ${messagesPerField.printIfExists('lastName','has-error')}">
             <div class="col-sm-2 col-md-2">
-                <label for="lastName" class="control-label">${msg("lastName")}</label> <span class="required">*</span>
+                <label for="lastName" class="${properties.kcLabelClass!}">${msg("lastName")} *</label>
             </div>
 
             <div class="col-sm-10 col-md-10">
-                <input type="text" class="form-control" id="lastName" name="lastName" value="${(account.lastName!'')}"/>
+                <input type="text" class="${properties.kcInputClass!}" id="lastName" name="lastName" value="${(account.lastName!'')}"/>
             </div>
         </div>
 
