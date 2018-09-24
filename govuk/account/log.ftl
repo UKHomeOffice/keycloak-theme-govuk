@@ -3,18 +3,18 @@
 
     <div class="row">
         <div class="col-md-10">
-            <h2>${msg("accountLogHtmlTitle")}</h2>
+            <h2 class="heading-large">${msg("accountLogHtmlTitle")}</h2>
         </div>
     </div>
 
-    <table class="table table-striped table-bordered">
+    <table>
         <thead>
         <tr>
-            <td>${msg("date")}</td>
-            <td>${msg("event")}</td>
-            <td>${msg("ip")}</td>
-            <td>${msg("client")}</td>
-            <td>${msg("details")}</td>
+            <th>${msg("date")}</th>
+            <th>${msg("event")}</th>
+            <th>${msg("ip")}</th>
+            <th>${msg("client")}</th>
+            <th>${msg("details")}</th>
         </tr>
         </thead>
 
@@ -25,7 +25,15 @@
                 <td>${event.event}</td>
                 <td>${event.ipAddress}</td>
                 <td>${event.client!}</td>
-                <td><#list event.details as detail>${detail.key} = ${detail.value} <#if detail_has_next>, </#if></#list></td>
+                <td>
+                    <ul>
+                        <#list event.details as detail>
+                            <li class="list-bullet">
+                                ${detail.key} = ${detail.value} 
+                            </li>
+                        </#list>
+                    </ul>
+                </td>
             </tr>
         </#list>
         </tbody>
