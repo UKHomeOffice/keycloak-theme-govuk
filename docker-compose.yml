@@ -10,3 +10,4 @@ keycloak:
   environment:
     KEYCLOAK_PASSWORD: "admin"
     KEYCLOAK_USER: "admin"
+    DB_VENDOR: "h2"
