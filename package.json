@@ -9,8 +9,8 @@
     "build": "npm-run-all build:sass build:assets",
 
     "build:sass": "npm-run-all build:sass_login build:sass_account",
-    "build:sass_login": "mkdir -p govuk/login/resources/css && npm-sass sass/application.scss > govuk/login/resources/css/application.css",
-    "build:sass_account": "mkdir -p govuk/account/resources/css && npm-sass sass/application.scss > govuk/account/resources/css/application.css",
+    "build:sass_login": "mkdir -p govuk/login/resources/css && npm-sass sass/all.scss > govuk/login/resources/css/all.css",
+    "build:sass_account": "mkdir -p govuk/account/resources/css && npm-sass sass/all.scss > govuk/account/resources/css/all.css",
 
     "build:assets": "npm-run-all build:assets_login build:assets_account",
     "build:assets_login": "mkdir -p govuk/login/resources/assets && cp -R node_modules/govuk-frontend/assets govuk/login/resources",

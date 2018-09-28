@@ -21,8 +21,7 @@
     </#list>
 </#if>
 
-
-<html class="${properties.kcHtmlClass!}" lang="${LANG_CODE}">
+<html class="govuk-template" lang="${LANG_CODE}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -35,159 +34,139 @@
     </#if>
     <title>${msg("accountManagementTitle")}</title>
 
-    <link rel="icon" href="${url.resourcesPath}/img/favicon.ico">
+
 
     <#-- Start GOV.UK Template <head> content -->
 
-    <!--[if gt IE 8]><!--><link href="${url.resourcesPath}/vendor/govuk_template/stylesheets/govuk-template.css?0.22.1" media="screen" rel="stylesheet" /><!--<![endif]-->
-    <!--[if IE 6]><link href="${url.resourcesPath}/vendor/govuk_template/stylesheets/govuk-template-ie6.css?0.22.1" media="screen" rel="stylesheet" /><![endif]-->
-    <!--[if IE 7]><link href="${url.resourcesPath}/vendor/govuk_template/stylesheets/govuk-template-ie7.css?0.22.1" media="screen" rel="stylesheet" /><![endif]-->
-    <!--[if IE 8]><link href="${url.resourcesPath}/vendor/govuk_template/stylesheets/govuk-template-ie8.css?0.22.1" media="screen" rel="stylesheet" /><![endif]-->
-    <link href="${url.resourcesPath}/vendor/govuk_template/stylesheets/govuk-template-print.css?0.22.1" media="print" rel="stylesheet" />
-
-    <!--[if IE 8]><link href="${url.resourcesPath}/vendor/govuk_template/stylesheets/fonts-ie8.css?0.22.1" media="all" rel="stylesheet" /><![endif]-->
-    <!--[if gte IE 9]><!--><link href="${url.resourcesPath}/vendor/govuk_template/stylesheets/fonts.css?0.22.1" media="all" rel="stylesheet" /><!--<![endif]-->
-    <!--[if lt IE 9]><script src="${url.resourcesPath}/vendor/govuk_template/javascripts/ie.js?0.22.1"></script><![endif]-->
-
-    <link rel="shortcut icon" href="${url.resourcesPath}/vendor/govuk_template/images/favicon.ico?0.22.1" type="image/x-icon" />
-    <link rel="mask-icon" href="${url.resourcesPath}/vendor/govuk_template/images/gov.uk_logotype_crown.svg?0.22.1" color="#0b0c0c">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="${url.resourcesPath}/vendor/govuk_template/images/apple-touch-icon-152x152.png?0.22.1">
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="${url.resourcesPath}/vendor/govuk_template/images/apple-touch-icon-120x120.png?0.22.1">
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="${url.resourcesPath}/vendor/govuk_template/images/apple-touch-icon-76x76.png?0.22.1">
-    <link rel="apple-touch-icon-precomposed" href="${url.resourcesPath}/vendor/govuk_template/images/apple-touch-icon-60x60.png?0.22.1">
+    <link rel="shortcut icon" href="${url.resourcesPath}/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="${url.resourcesPath}/assets/images/govuk-logotype-crown.png" color="#0b0c0c">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="${url.resourcesPath}/assets/images/govuk-apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="167x167" href="${url.resourcesPath}/assets/images/govuk-apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="${url.resourcesPath}/assets/images/govuk-apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon-precomposed" href="${url.resourcesPath}/assets/images/govuk-apple-touch-icon.png">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:image" content="${url.resourcesPath}/vendor/govuk_template/images/opengraph-image.png?0.22.1">
+    <meta property="og:image" content="${url.resourcesPath}/assets/images/govuk-opengraph-image.png">
 
     <#-- End GOV.UK Template <head> content -->
 
-        <#-- GOV.UK Elements stylesheets -->
+    <#-- GOV.UK Design System stylesheet -->
 
-    <!--[if gt IE 8]><!--><link href="${url.resourcesPath}/css/govuk_elements.css" rel="stylesheet" type="text/css"><!--<![endif]-->
-    <!--[if IE 6]><link href="${url.resourcesPath}/css/govuk_elements-ie6.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 7]><link href="${url.resourcesPath}/css/govuk_elements-ie7.css" rel="stylesheet" type="text/css" /><![endif]-->
-    <!--[if IE 8]><link href="${url.resourcesPath}/css/govuk_elements-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+    <link href="${url.resourcesPath}/css/all.css" rel="stylesheet" type="text/css">
 
-    <#-- End GOV.UK Elements stylesheets -->
-
-    <#if properties.styles?has_content>
-        <#list properties.styles?split(' ') as style>
-            <link href="${url.resourcesPath}/${style}" rel="stylesheet" />
-        </#list>
-    </#if>
-    <#if properties.scripts?has_content>
-        <#list properties.scripts?split(' ') as script>
-            <script src="${url.resourcesPath}/${script}" type="text/javascript"></script>
-        </#list>
-    </#if>
-    <#if scripts??>
-        <#list scripts as script>
-            <script src="${script}" type="text/javascript"></script>
-        </#list>
-    </#if>
+    <#-- End GOV.UK Design System stylesheet -->
 </head>
-<body class="${properties.kcBodyClass!}">
+<body class="govuk-template__body">
     <#-- Add GOV.UK Template <body> JavaScript class -->
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
         
     <#-- Start GOV.UK Template header -->
 
-    <div id="skiplink-container">
-      <div>
-        <a href="#content" class="skiplink">Skip to main content</a>
-      </div>
-    </div>
-    <div id="global-cookie-message">
+    <a href="#content" class="govuk-skip-link">Skip to main content</a>
+    <header class="govuk-header" role="banner" data-module="header">
+        <div class="govuk-header__container govuk-width-container">
+            <div class="govuk-header__logo">
+            <a href="#" class="govuk-header__link govuk-header__link--homepage">
+                <span class="govuk-header__logotype">
 
-        <p>GOV.UK uses cookies to make the site simpler. <a href=\"https://www.gov.uk/help/cookies\">Find out more about cookies</a></p>
+                <svg role="presentation" focusable="false" class="govuk-header__logotype-crown" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 132 97" height="32" width="36">
+                    <path fill="currentColor" fill-rule="evenodd" d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"></path>
 
-    </div>
-    <header role="banner" id="global-header" class="${properties.kcHeaderClass!} with-proposition">
-      <div class="header-wrapper">
-        <div class="header-global">
-          <div class="header-logo">
-            <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
-              <img src="${url.resourcesPath}/vendor/govuk_template/images/gov.uk_logotype_crown_invert_trans.png?0.22.1" width="36" height="32" alt=""> GOV.UK
+                    <image src="/assets/images/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image"></image>
+                </svg>
+                <span class="govuk-header__logotype-text">
+                    GOV.UK
+                </span>
+                </span>
             </a>
-          </div>
-        </div>
-        <#if realm.displayNameHtml?? || realm.displayName??>
-          <div class="header-proposition">
-            <div class="content">
-              <#if realm.displayNameHtml?? && realm.displayNameHtml != realm.displayName>
-                ${realm.displayNameHtml?no_esc}
-              <#elseif realm.displayName??>
-                <a href="/" id="proposition-name">${realm.displayName}</a>
-              </#if>
             </div>
-          </div>
-        </#if>
-      </div>
+            <#if realm.displayNameHtml?? || realm.displayName??>
+                <div class="govuk-header__content">
+                    <#if realm.displayNameHtml?? && realm.displayNameHtml != realm.displayName>
+                        <#--  ${realm.displayNameHtml?no_esc}  -->
+                    <#elseif realm.displayName??>
+                        <a href="#" class="govuk-header__link govuk-header__link--service-name">${realm.displayName}</a>
+                    </#if>
+                </div>
+            </#if>
+        </div>
     </header>
 
     <div id="global-header-bar"></div>
 
     <#-- End GOV.UK Template header -->
+    <div class="govuk-width-container">
+        <main role="main" class="govuk-main-wrapper" id="main-content">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                    <ul class="govuk-list">
+                        <li class="<#if active=='account'>active</#if> heading-small"><a href="${url.accountUrl}" class="govuk-link">${msg("account")}</a></li>
+                        <#if features.passwordUpdateSupported><li class="<#if active=='password'>active</#if> heading-small"><a href="${url.passwordUrl}" class="govuk-link">${msg("password")}</a></li></#if>
+                        <li class="<#if active=='totp'>active</#if> heading-small"><a href="${url.totpUrl}" class="govuk-link">${msg("authenticator")}</a></li>
+                        <#if features.identityFederation><li class="<#if active=='social'>active</#if> heading-small"><a href="${url.socialUrl}" class="govuk-link">${msg("federatedIdentity")}</a></li></#if>
+                        <li class="<#if active=='sessions'>active</#if> heading-small"><a href="${url.sessionsUrl}" class="govuk-link">${msg("sessions")}</a></li>
+                        <li class="<#if active=='applications'>active</#if> heading-small"><a href="${url.applicationsUrl}" class="govuk-link">${msg("applications")}</a></li>
+                        <#if features.log><li class="<#if active=='log'>active</#if> heading-small"><a href="${url.logUrl}" class="govuk-link">${msg("log")}</a></li></#if>
+                        <#if realm.userManagedAccessAllowed && features.authorization><li class="<#if active=='authorization'>active</#if> heading-small"><a href="${url.resourceUrl}" class="govuk-link">${msg("myResources")}</a></li></#if>
+                    </ul>
+                </div>
+                <div class="govuk-grid-column-two-thirds">
+                    <#if message?has_content>
+                        <#if message.type=='success' ><span class="pficon pficon-ok"></span>
+                        <div class="govuk-body">${kcSanitize(message.summary)?no_esc}</div>
+                        </#if>
+                        <#if message.type=='error' >
+                            <div class="govuk-error-summary">
+                                <span class="pficon pficon-error-octagon"></span>
+                                <span class="pficon pficon-error-exclamation"></span>
+                                <h2 class="govuk-error-summary__title" id="error-summary-title">
+                                    There is a problem
+                                </h2>
+                                <div class="govuk-error-summary__body">
+                                    <div class="govuk-error-message">${kcSanitize(message.summary)?no_esc}</div>
+                                </div>
+                            </div>
+                        </#if>
+                    </#if>
 
-    <main id="content" role="main">
-        <div class="grid-row">
-            <div class="column-one-third">
-                <ul>
-                    <li class="<#if active=='account'>active</#if> heading-small"><a href="${url.accountUrl}">${msg("account")}</a></li>
-                    <#if features.passwordUpdateSupported><li class="<#if active=='password'>active</#if> heading-small"><a href="${url.passwordUrl}">${msg("password")}</a></li></#if>
-                    <li class="<#if active=='totp'>active</#if> heading-small"><a href="${url.totpUrl}">${msg("authenticator")}</a></li>
-                    <#if features.identityFederation><li class="<#if active=='social'>active</#if> heading-small"><a href="${url.socialUrl}">${msg("federatedIdentity")}</a></li></#if>
-                    <li class="<#if active=='sessions'>active</#if> heading-small"><a href="${url.sessionsUrl}">${msg("sessions")}</a></li>
-                    <li class="<#if active=='applications'>active</#if> heading-small"><a href="${url.applicationsUrl}">${msg("applications")}</a></li>
-                    <#if features.log><li class="<#if active=='log'>active</#if> heading-small"><a href="${url.logUrl}">${msg("log")}</a></li></#if>
-                    <#if realm.userManagedAccessAllowed && features.authorization><li class="<#if active=='authorization'>active</#if> heading-small"><a href="${url.resourceUrl}">${msg("myResources")}</a></li></#if>
-                </ul>
+                    <#nested "content">
+                </div>
             </div>
-            <div class="content-area column-two-thirds">
-                <#if message?has_content>
-                    <div class="alert alert-${message.type}">
-                        <#if message.type=='success' ><span class="pficon pficon-ok"></span></#if>
-                        <#if message.type=='error' ><span class="pficon pficon-error-octagon"></span><span class="pficon pficon-error-exclamation"></span></#if>
-                        ${kcSanitize(message.summary)?no_esc}
-                    </div>
-                </#if>
-
-                <#nested "content">
-            </div>
-        </div>
-    </main>
+        </main>
+    </div>
 
     <#-- Start GOV.UK Template footer -->
 
-    <footer class="group js-footer" id="footer" role="contentinfo">
+    <footer class="govuk-footer " role="contentinfo">
+        <div class="govuk-width-container ">
+            <div class="govuk-footer__meta">
+            <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
 
-      <div class="footer-wrapper">
-        <div class="footer-meta">
-          <div class="footer-meta-inner">
-
-            <div class="open-government-licence">
-              <p class="logo"><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a></p>
-
-                <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated</p>
-
+                <svg role="presentation" focusable="false" class="govuk-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 483.2 195.7" height="17" width="41">
+                <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"
+                />
+                </svg>
+                <span class="govuk-footer__licence-description">
+                All content is available under the
+                <a class="govuk-footer__link" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+                </span>
             </div>
-          </div>
-
-          <div class="copyright">
-            <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">&copy; Crown copyright</a>
-          </div>
+            <div class="govuk-footer__meta-item">
+                <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+            </div>
+            </div>
         </div>
-      </div>
     </footer>
 
     <div id="global-app-error" class="app-error hidden"></div>
-
-    <script src="${url.resourcesPath}/vendor/govuk_template/javascripts/govuk-template.js?0.22.1"></script>
 
     <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
 
     <#-- End GOV.UK Template footer -->
 
-</body>
+    <script src="node_modules/govuk-frontend/all.js"></script>
+    <script>window.GOVUKFrontend.initAll()</script>
+    </body>
+
 </html>
 </#macro>

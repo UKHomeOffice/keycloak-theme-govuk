@@ -7,23 +7,18 @@
     <#elseif section = "back">
         <a class="link-back" href="${url.loginUrl}">${msg("backToLogin")}</a>
     <#elseif section = "form">
-        <p>${msg("emailInstruction")}</p>
+        <p class="govuk-body">${msg("emailInstruction")}</p>
+        <div class="govuk-grid-row">
+            <form id="kc-reset-password-form" class="${properties.kcFormClass!} govuk-grid-column-two-thirds" action="${url.loginAction}" method="post">
+                <div class="govuk-form-group">
+                    <label for="username" class="govuk-label"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+                    <input type="text" id="username" name="username" class="govuk-input" autofocus/>
+                </div>
 
-        <form id="kc-reset-password-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
-            <div class="${properties.kcFormGroupClass!}">
-                <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="username" class="${properties.kcLabelClass!}"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+                <div class="govuk-form-group">
+                    <input class="govuk-button" type="submit" value="${msg("doResetPassword")}"/>
                 </div>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="username" name="username" class="${properties.kcInputClass!}" autofocus/>
-                </div>
-            </div>
-
-            <div class="${properties.kcFormGroupClass!}">
-                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doResetPassword")}"/>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </#if>
 </@layout.registrationLayout>
