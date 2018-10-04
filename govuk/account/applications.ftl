@@ -70,7 +70,7 @@
 
                     <td class="govuk-table__cell">
                         <#if (application.client.consentRequired && application.clientScopesGranted?has_content) || application.additionalGrants?has_content>
-                            <button type='submit' class='${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!}' id='revoke-${application.client.clientId}' name='clientId' value="${application.client.id}">${msg("revoke")}</button>
+                            <button type='submit' class='govuk-button' id='revoke-${application.client.clientId}' name='clientId' value="${application.client.id}">${msg("revoke")}</button>
                         </#if>
                     </td>
                 </tr>

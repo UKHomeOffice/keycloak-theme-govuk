@@ -19,17 +19,17 @@
         </li>
     </ol>
     <form action="${url.loginAction}" class="${properties.kcFormClass!}" id="kc-totp-settings-form" method="post">
-        <div class="${properties.kcFormGroupClass!}">
+        <div class="govuk-form-group">
             <div class="${properties.kcLabelWrapperClass!}">
-                <label for="totp" class="${properties.kcLabelClass!}">${msg("loginTotpOneTime")}</label>
+                <label for="totp" class="govuk-label">${msg("loginTotpOneTime")}</label>
             </div>
             <div class="${properties.kcInputWrapperClass!}">
-                <input type="text" id="totp" name="totp" autocomplete="off" class="${properties.kcInputClass!}" />
+                <input type="text" id="totp" name="totp" autocomplete="off" class="govuk-input" />
             </div>
             <input type="hidden" id="totpSecret" name="totpSecret" value="${totp.totpSecret}" />
         </div>
 
-        <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doSubmit")}"/>
+        <input class="govuk-button" type="submit" value="${msg("doSubmit")}"/>
     </form>
     </#if>
 </@layout.registrationLayout>

@@ -25,14 +25,14 @@
 
                 <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
                     <#if realm.rememberMe && !usernameEditDisabled??>
-                        <div class="checkbox ${properties.kcFormGroupClass}">
+                        <div class="checkbox govuk-form-group">
                             <div class="multiple-choice">
                                 <#if login.rememberMe??>
                                     <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3" checked>
-                                    <label for="rememberMe" class="${properties.kcCheckboxLabelClass}">${msg("rememberMe")}</label>
+                                    <label for="rememberMe" class="govuk-label govuk-checkboxes__label">${msg("rememberMe")}</label>
                                 <#else>
                                     <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3">
-                                    <label for="rememberMe" class="${properties.kcCheckboxLabelClass}">${msg("rememberMe")}</label>
+                                    <label for="rememberMe" class="govuk-label govuk-checkboxes__label">${msg("rememberMe")}</label>
                                 </#if>
                             </div>
                         </div>
@@ -41,7 +41,7 @@
 
                 <input class="govuk-button" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
 
-                <div class="${properties.kcFormOptionsWrapperClass!} ${properties.kcFormGroupClass}">
+                <div class="${properties.kcFormOptionsWrapperClass!} govuk-form-group">
                     <#if realm.resetPasswordAllowed>
                         <p><a class="govuk-link govuk-body" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></p>
                     </#if>
