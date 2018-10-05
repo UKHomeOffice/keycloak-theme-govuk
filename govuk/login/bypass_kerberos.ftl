@@ -13,10 +13,10 @@
         <!-- <h3>${msg("kerberosNotConfigured")}</h3> -->
         <p class="instruction">${msg("bypassKerberosDetail")}</p>
         <form class="form-actions" action="${url.loginAction}" method="POST">
-            <div class="${properties.kcFormGroupClass!}">
+            <div class="govuk-form-group">
                  <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                     <div class="${properties.kcFormButtonsWrapperClass!}">
-                        <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="continue" id="kc-login" type="submit" value="${msg("doContinue")}"/>
+                        <input class="govuk-button" name="continue" id="kc-login" type="submit" value="${msg("doContinue")}"/>
                     </div>
                 </div>
             </div>

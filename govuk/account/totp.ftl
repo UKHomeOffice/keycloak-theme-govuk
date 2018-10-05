@@ -1,51 +1,52 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='totp' bodyClass='totp'; section>
-
+    <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
     <#if totp.enabled>
-<h2 class="heading-large">${msg("authenticatorTitle")}</h2>
+    <h1 class="govuk-heading-xl">${msg("authenticatorTitle")}</h1>
 
-<table class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th colspan="2">${msg("configureAuthenticators")}</th>
-            </tr>
-        </thead>
-    <tbody>
-        <tr>
-            <td class="provider">${msg("mobile")}</td>
-            <td class="action">
-                <form action="${url.totpUrl}" method="post" class="form-inline">
-                    <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
-                    <input type="hidden" id="submitAction" name="submitAction" value="Delete">
-                    <button id="remove-mobile" class="btn btn-default"><i class="pficon pficon-delete"></i></button>
-                </form>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+        <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th colspan="2" class="govuk-table__header" scope="col">${msg("configureAuthenticators")}</th>
+                </tr>
+            </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="provider govuk-table__cell">${msg("mobile")}</td>
+                <td class="action govuk-table__cell">
+                    <form action="${url.totpUrl}" method="post" class="form-inline">
+                        <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
+                        <input type="hidden" id="submitAction" name="submitAction" value="Delete">
+                        <button id="remove-mobile" class="btn btn-default"><i class="pficon pficon-delete"></i></button>
+                    </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     <#else>
-<h2 class="heading-large">${msg("authenticatorTitle")}</h2>
+    <h1 class="govuk-heading-xl">${msg("authenticatorTitle")}</h1>
 
-<hr/>
+    <hr/>
 
-<div>
     <div>
-        <p>${msg("totpStep1")}</p>
+        <div class="govuk-body">
+            <p>${msg("totpStep1")}</p>
 
-        <ul>
-            <#list totp.policy.supportedApplications as app>
-            <li class="list-bullet">${app}</li>
-            </#list>
-        </ul>
-    </div>
+            <ul>
+                <#list totp.policy.supportedApplications as app>
+                <li class="list-bullet">${app}</li>
+                </#list>
+            </ul>
+        </div>
 
     <#if mode?? && mode = "manual">
-        <div>
+        <div class="govuk-body">
             <p>${msg("totpManualStep2")}</p>
             <p><span id="kc-totp-secret-key">${totp.totpSecretEncoded}</span></p>
             <p><a href="${totp.qrUrl}" id="mode-barcode">${msg("totpScanBarcode")}</a></p>
         </div>
-        <div>
+        <div class="govuk-body">
             <p>${msg("totpManualStep3")}</p>
             <ul>
                 <li id="kc-totp-type">${msg("totpType")}: ${msg("totp." + totp.policy.type)}</li>
@@ -59,41 +60,35 @@
             </ul>
         </div>
     <#else>
-        <div>
+        <div class="govuk-body">
             <p>${msg("totpStep2")}</p>
             <p><img src="data:image/png;base64, ${totp.totpSecretQrCode}" alt="Figure: Barcode"></p>
             <p><a href="${totp.manualUrl}" id="mode-manual">${msg("totpUnableToScan")}</a></p>
         </div>
     </#if>
-    <div>
+    <div class="govuk-body">
         <p>${msg("totpStep3")}</p>
     </div>
-</div>
+    </div>
 
-<hr/>
+    <hr/>
 
-<form action="${url.totpUrl}" class="form-horizontal" method="post">
-    <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
-    <div class="form-group">
-        <div class="col-sm-2 col-md-2">
-            <label for="totp" class="${properties.kcLabelClass!}">${msg("authenticatorCode")}</label>
-            </div>
-
-        <div class="col-sm-10 col-md-10">
-            <input type="text" class="${properties.kcInputClass!}" id="totp" name="totp" autocomplete="off" autofocus autocomplete="off">
+    <form action="${url.totpUrl}" class="form-horizontal" method="post">
+        <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
+        <div class="govuk-form-group">
+            <label for="totp" class="govuk-label">${msg("authenticatorCode")}</label>
+            <input type="text" class="govuk-input" id="totp" name="totp" autocomplete="off" autofocus autocomplete="off">
             <input type="hidden" id="totpSecret" name="totpSecret" value="${totp.totpSecret}" />
-            </div>
         </div>
 
-    <div class="form-group">
-        <div id="kc-form-buttons" class="col-md-offset-2 col-md-10 submit">
-            <div class="">
-                <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Save">${msg("doSave")}</button>
-                <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Cancel">${msg("doCancel")}</button>
-                </div>
-            </div>
+        <div class="govuk-form-group">
+            <button type="submit" class="govuk-button" name="submitAction" value="Save">${msg("doSave")}</button>
+            <button type="submit" class="govuk-button" name="submitAction" value="Cancel">${msg("doCancel")}</button>
         </div>
     </form>
     </#if>
+
+    </div>
+    </div>
 
 </@layout.mainLayout>

@@ -10,54 +10,54 @@
                 <summary><span class="summary">${msg("loginDirectSummary")}</span></summary>
                 <div id="kc-form-wrapper" class="panel panel-border-narrow">
                     <form id="kc-form-login" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
-                        <div class="${properties.kcFormGroupClass!}">
+                        <div class="govuk-form-group">
                             <div class="${properties.kcLabelWrapperClass!}">
-                                <label for="username" class="${properties.kcLabelClass!}"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
+                                <label for="username" class="govuk-label"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
                             </div>
 
                             <div class="${properties.kcInputWrapperClass!}">
                                 <#if usernameEditDisabled??>
-                                    <input id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}" type="text" disabled />
+                                    <input id="username" class="govuk-input" name="username" value="${(login.username!'')}" type="text" disabled />
                                 <#else>
-                                    <input id="username" class="${properties.kcInputClass!}" name="username" value="${(login.username!'')}" type="text" autofocus autocomplete="off" />
+                                    <input id="username" class="govuk-input" name="username" value="${(login.username!'')}" type="text" autofocus autocomplete="off" />
                                 </#if>
                             </div>
                         </div>
 
-                        <div class="${properties.kcFormGroupClass!}">
+                        <div class="govuk-form-group">
                             <div class="${properties.kcLabelWrapperClass!}">
-                                <label for="password" class="${properties.kcLabelClass!}">${msg("password")}</label>
+                                <label for="password" class="govuk-label">${msg("password")}</label>
                             </div>
 
                             <div class="${properties.kcInputWrapperClass!}">
-                                <input id="password" class="${properties.kcInputClass!}" name="password" type="password" autocomplete="off" />
+                                <input id="password" class="govuk-input" name="password" type="password" autocomplete="off" />
                             </div>
                         </div>
 
 
                             <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
                                 <#if realm.rememberMe && !usernameEditDisabled??>
-                                    <div class="checkbox ${properties.kcFormGroupClass}">
+                                    <div class="checkbox govuk-form-group">
                                         <div class="multiple-choice">
                                             <#if login.rememberMe??>
                                                 <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3" checked>
-                                                <label for="rememberMe" class="${properties.kcCheckboxLabelClass}">${msg("rememberMe")}</label>
+                                                <label for="rememberMe" class="govuk-label govuk-checkboxes__label">${msg("rememberMe")}</label>
                                             <#else>
                                                 <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3">
-                                                <label for="rememberMe" class="${properties.kcCheckboxLabelClass}">${msg("rememberMe")}</label>
+                                                <label for="rememberMe" class="govuk-label govuk-checkboxes__label">${msg("rememberMe")}</label>
                                             </#if>
                                         </div>
                                     </div>
                                 </#if>
                             </div>
 
-                            <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!} ${properties.kcFormGroupClass}">
+                            <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!} govuk-form-group">
                                 <div class="${properties.kcFormButtonsWrapperClass!}">
-                                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
+                                    <input class="govuk-button" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
                                 </div>
                             </div>
 
-                                <div class="${properties.kcFormOptionsWrapperClass!} ${properties.kcFormGroupClass}">
+                                <div class="${properties.kcFormOptionsWrapperClass!} govuk-form-group">
                                     <#if realm.resetPasswordAllowed>
                                         <p><a href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></p>
                                     </#if>

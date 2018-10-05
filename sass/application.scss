@@ -1,0 +1,11 @@
+$govuk-images-path: "../assets/images/";
+$govuk-fonts-path: "../assets/fonts/";
+
+@import "node_modules/govuk-frontend/all";
+
+.list.horizontal li {
+  display: list-item;
+  @media (min-width: 641px) {
+    display: inline;
+  }
+}

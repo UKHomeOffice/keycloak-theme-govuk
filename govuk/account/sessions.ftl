@@ -1,31 +1,27 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='sessions' bodyClass='sessions'; section>
 
-    <div class="row">
-        <div class="col-md-10">
-            <h2 class="heading-large">${msg("sessionsHtmlTitle")}</h2>
-        </div>
-    </div>
+    <h1 class="govuk-heading-xl">${msg("sessionsHtmlTitle")}</h1>
 
-    <table>
-        <thead>
-        <tr>
-            <th>${msg("ip")}</th>
-            <th>${msg("started")}</th>
-            <th>${msg("lastAccess")}</th>
-            <th>${msg("expires")}</th>
-            <th>${msg("clients")}</th>
+    <table class="govuk-table">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">${msg("ip")}</th>
+            <th class="govuk-table__header" scope="col">${msg("started")}</th>
+            <th class="govuk-table__header" scope="col">${msg("lastAccess")}</th>
+            <th class="govuk-table__header" scope="col">${msg("expires")}</th>
+            <th class="govuk-table__header" scope="col">${msg("clients")}</th>
         </tr>
         </thead>
 
-        <tbody>
+        <tbody class="govuk-table__body">
         <#list sessions.sessions as session>
-            <tr>
-                <td>${session.ipAddress}</td>
-                <td>${session.started?datetime}</td>
-                <td>${session.lastAccess?datetime}</td>
-                <td>${session.expires?datetime}</td>
-                <td>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">${session.ipAddress}</td>
+                <td class="govuk-table__cell">${session.started?datetime}</td>
+                <td class="govuk-table__cell">${session.lastAccess?datetime}</td>
+                <td class="govuk-table__cell">${session.expires?datetime}</td>
+                <td class="govuk-table__cell">
                     <#list session.clients as client>
                         ${client}<br/>
                     </#list>
@@ -36,7 +32,7 @@
     </table>
     <form action="${url.sessionsUrl}" method="post" style="margin-top:15px;">
         <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
-        <button id="logout-all-sessions" class="${properties.kcButtonClass!}">${msg("doLogOutAllSessions")}</button>
+        <button id="logout-all-sessions" class="govuk-button">${msg("doLogOutAllSessions")}</button>
     </form>
 
 </@layout.mainLayout>

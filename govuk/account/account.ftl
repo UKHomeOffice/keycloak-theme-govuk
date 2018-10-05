@@ -1,70 +1,41 @@
 <#import "template.ftl" as layout>
 <@layout.mainLayout active='account' bodyClass='user'; section>
 
-    <div class="row">
-        <div class="col-md-10">
-            <h2 class="heading-large">${msg("editAccountHtmlTitle")}</h2>
-        </div>
-        <div class="col-md-2 subtitle">
-            <span class="subtitle form-hint"><span class="required">*</span> ${msg("requiredFields")}</span>
+    <h1 class="govuk-heading-xl">${msg("editAccountHtmlTitle")}</h1>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="${url.accountUrl}" class="${properties.kcFormClass!}" method="post">
+                <span class="govuk-hint"><span class="required">*</span> ${msg("requiredFields")}</span>
+                <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
+                    <#if !realm.registrationEmailAsUsername>
+                        <div class="govuk-form-group ${messagesPerField.printIfExists('username','govuk-form-group--error')}">
+                            <label for="username" class="govuk-label">${msg("username")}</label> <#if realm.editUsernameAllowed><span class="required">*</span></#if>
+                            <input type="text" class="govuk-input" id="username" name="username" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')}"/>
+                        </div>
+                    </#if>
+                <div class="govuk-form-group ${messagesPerField.printIfExists('email','govuk-form-group--error')}">
+                    <label for="email" class="govuk-label">${msg("email")} *</label>
+                    <input type="text" class="govuk-input" id="email" name="email" autofocus value="${(account.email!'')}"/>
+                </div>
+
+                <div class="govuk-form-group ${messagesPerField.printIfExists('firstName','govuk-form-group--error')}">
+                    <label for="firstName" class="govuk-label">${msg("firstName")} *</label>
+                    <input type="text" class="govuk-input" id="firstName" name="firstName" value="${(account.firstName!'')}"/>
+                </div>
+
+                <div class="govuk-form-group ${messagesPerField.printIfExists('lastName','govuk-form-group--error')}">
+                    <label for="lastName" class="govuk-label">${msg("lastName")} *</label>
+                    <input type="text" class="govuk-input" id="lastName" name="lastName" value="${(account.lastName!'')}"/>
+                </div>
+
+                <div class="govuk-form-group">
+                    <#if url.referrerURI??><a href="${url.referrerURI}">${kcSanitize(msg("backToApplication")?no_esc)}</a></#if>
+                    <button type="submit" class="govuk-button" name="submitAction" value="Save">${msg("doSave")}</button>
+                    <button type="submit" class="govuk-button" name="submitAction" value="Cancel">${msg("doCancel")}</button>
+                </div>
+            </form>
         </div>
     </div>
-
-    <form action="${url.accountUrl}" class="${properties.kcFormClass!}" method="post">
-
-        <input type="hidden" id="stateChecker" name="stateChecker" value="${stateChecker}">
-
-        <#if !realm.registrationEmailAsUsername>
-            <div class="form-group ${messagesPerField.printIfExists('username','has-error')} ${properties.kcFormGroupClass!}">
-                <div class="col-sm-2 col-md-2">
-                    <label for="username" class="${properties.kcLabelClass!}">${msg("username")}</label> <#if realm.editUsernameAllowed><span class="required">*</span></#if>
-                </div>
-
-                <div class="col-sm-10 col-md-10">
-                    <input type="text" class="${properties.kcInputClass!}" id="username" name="username" <#if !realm.editUsernameAllowed>disabled="disabled"</#if> value="${(account.username!'')}"/>
-                </div>
-            </div>
-        </#if>
-
-        <div class="form-group ${messagesPerField.printIfExists('email','has-error')}">
-            <div class="col-sm-2 col-md-2">
-            <label for="email" class="${properties.kcLabelClass!}">${msg("email")} *</label>
-            </div>
-
-            <div class="col-sm-10 col-md-10">
-                <input type="text" class="${properties.kcInputClass!}" id="email" name="email" autofocus value="${(account.email!'')}"/>
-            </div>
-        </div>
-
-        <div class="form-group ${messagesPerField.printIfExists('firstName','has-error')}">
-            <div class="col-sm-2 col-md-2">
-                <label for="firstName" class="${properties.kcLabelClass!}">${msg("firstName")} *</label>
-            </div>
-
-            <div class="col-sm-10 col-md-10">
-                <input type="text" class="${properties.kcInputClass!}" id="firstName" name="firstName" value="${(account.firstName!'')}"/>
-            </div>
-        </div>
-
-        <div class="form-group ${messagesPerField.printIfExists('lastName','has-error')}">
-            <div class="col-sm-2 col-md-2">
-                <label for="lastName" class="${properties.kcLabelClass!}">${msg("lastName")} *</label>
-            </div>
-
-            <div class="col-sm-10 col-md-10">
-                <input type="text" class="${properties.kcInputClass!}" id="lastName" name="lastName" value="${(account.lastName!'')}"/>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div id="kc-form-buttons" class="col-md-offset-2 col-md-10 submit">
-                <div class="">
-                    <#if url.referrerURI??><a href="${url.referrerURI}">${kcSanitize(msg("backToApplication")?no_esc)}</a></#if>
-                    <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Save">${msg("doSave")}</button>
-                    <button type="submit" class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!}" name="submitAction" value="Cancel">${msg("doCancel")}</button>
-                </div>
-            </div>
-        </div>
-    </form>
 
 </@layout.mainLayout>

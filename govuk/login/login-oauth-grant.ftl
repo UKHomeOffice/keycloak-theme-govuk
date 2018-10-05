@@ -48,7 +48,7 @@
 
             <form class="form-actions" action="${url.oauthAction}" method="POST">
                 <input type="hidden" name="code" value="${oauth.code}">
-                <div class="${properties.kcFormGroupClass!}">
+                <div class="govuk-form-group">
                     <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
                         <div class="${properties.kcFormOptionsWrapperClass!}">
                         </div>
@@ -56,8 +56,8 @@
 
                     <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
                         <div class="${properties.kcFormButtonsWrapperClass!}">
-                            <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonLargeClass!}" name="accept" id="kc-login" type="submit" value="${msg("doYes")}"/>
-                            <input class="${properties.kcButtonClass!} ${properties.kcButtonDefaultClass!} ${properties.kcButtonLargeClass!}" name="cancel" id="kc-cancel" type="submit" value="${msg("doNo")}"/>
+                            <input class="govuk-button" name="accept" id="kc-login" type="submit" value="${msg("doYes")}"/>
+                            <input class="govuk-button" name="cancel" id="kc-cancel" type="submit" value="${msg("doNo")}"/>
                         </div>
                     </div>
                 </div>
