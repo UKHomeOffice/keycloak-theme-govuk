@@ -52,9 +52,14 @@
 
     <#-- GOV.UK Design System stylesheet -->
 
-    <link href="${url.resourcesPath}/css/all.css" rel="stylesheet" type="text/css">
+    <!--[if !IE 8]><!--><link href="${url.resourcesPath}/css/application.css" rel="stylesheet" type="text/css"><!--<![endif]-->
+    <!--[if IE 8]><!--><link href="${url.resourcesPath}/css/application-ie8.css" rel="stylesheet" type="text/css"><!--<![endif]-->
 
     <#-- End GOV.UK Design System stylesheet -->
+
+    <#--  HTML 5 shiv  -->
+    <!--[if lt IE 9]><!--><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><!--<![endif]-->
+    
 </head>
 <body class="govuk-template__body">
     <#-- Add GOV.UK Template <body> JavaScript class -->

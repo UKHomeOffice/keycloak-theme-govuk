@@ -3,20 +3,24 @@
   "version": "1.1.0",
   "devDependencies": {
     "npm-run-all": "^4.0.2",
-    "npm-sass": "^2.2.1"
+    "npm-sass": "^2.2.1",
+    "oldie": "^1.3.0",
+    "postcss": "^7.0.5",
+    "postcss-cli": "^6.0.0"
   },
   "scripts": {
     "build": "npm-run-all build:sass build:assets",
-
-    "build:sass": "npm-run-all build:sass_login build:sass_account",
-    "build:sass_login": "mkdir -p govuk/login/resources/css && npm-sass sass/all.scss > govuk/login/resources/css/all.css",
-    "build:sass_account": "mkdir -p govuk/account/resources/css && npm-sass sass/all.scss > govuk/account/resources/css/all.css",
-
+    "build:sass": "npm-run-all build:sass_login build:sass_account build:sass_ie8",
+    "build:sass_ie8": "npm-run-all build:sass_login_ie8 build:sass_account_ie8",
+    "build:sass_login": "mkdir -p govuk/login/resources/css && npm-sass sass/application.scss > govuk/login/resources/css/application.css",
+    "build:sass_login_ie8": "mkdir -p govuk/login/resources/css && npm-sass sass/application-ie8.scss > govuk/login/resources/css/application-ie8.css",
+    "build:sass_account": "mkdir -p govuk/account/resources/css && npm-sass sass/application.scss > govuk/account/resources/css/application.css",
+    "build:sass_account_ie8": "mkdir -p govuk/account/resources/css && npm-sass sass/application-ie8.scss > govuk/account/resources/css/application-ie8.css",
+    "postcss_login": "postcss govuk/login/resources/css/application-ie8.css -u oldie",
+    "postcss_account": "postcss govuk/account/resources/css/application-ie8.css -u oldie",
     "build:assets": "npm-run-all build:assets_login build:assets_account",
     "build:assets_login": "mkdir -p govuk/login/resources/assets && cp -R node_modules/govuk-frontend/assets govuk/login/resources",
     "build:assets_account": "mkdir -p govuk/account/resources/assets && cp -R node_modules/govuk-frontend/assets govuk/account/resources",
-
-
     "dist": "mkdir -p dist && npm-run-all dist:govuk dist:govuk-social-providers  dist:govuk-internal",
     "dist:govuk": "tar -czf dist/govuk.tar.gz govuk/",
     "dist:govuk-social-providers": "tar -czf dist/govuk-social-providers.tar.gz govuk-social-providers/",
