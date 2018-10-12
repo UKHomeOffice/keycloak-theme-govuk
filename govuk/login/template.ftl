@@ -51,7 +51,8 @@
 
     <#-- GOV.UK Design System stylesheet -->
 
-    <link href="${url.resourcesPath}/css/application.css" rel="stylesheet" type="text/css">
+    <!--[if !IE 8]><!--><link href="${url.resourcesPath}/css/application.css" rel="stylesheet" type="text/css"><!--<![endif]-->
+    <!--[if IE 8]><link href="${url.resourcesPath}/css/application-ie8.css" rel="stylesheet" type="text/css"><![endif]-->
 
     <#-- End GOV.UK Design System stylesheet -->
 </head>
