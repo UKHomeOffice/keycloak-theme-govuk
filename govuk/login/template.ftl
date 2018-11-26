@@ -209,7 +209,7 @@
 
     <#-- End GOV.UK Template footer -->
 
-    <script src="./node_modules/govuk-frontend/all.js"></script>
+    <script src="${url.resourcesPath}/all.js"></script>
     <script>window.GOVUKFrontend.initAll()</script>
     </body>
 
