@@ -59,12 +59,12 @@
 
     <#--  HTML 5 shiv  -->
     <!--[if lt IE 9]><!--><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><!--<![endif]-->
-    
+
 </head>
 <body class="govuk-template__body">
     <#-- Add GOV.UK Template <body> JavaScript class -->
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
-        
+
     <#-- Start GOV.UK Template header -->
 
     <a href="#content" class="govuk-skip-link">Skip to main content</a>
@@ -169,7 +169,7 @@
 
     <#-- End GOV.UK Template footer -->
 
-    <script src="node_modules/govuk-frontend/all.js"></script>
+    <script src="${url.resourcesPath}/all.js"></script>
     <script>window.GOVUKFrontend.initAll()</script>
     </body>
 
