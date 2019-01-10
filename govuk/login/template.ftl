@@ -100,7 +100,7 @@
         <main role="main" class="govuk-main-wrapper" id="main-content">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
-                    <h1 class="govuk-heading-xl"><#nested "title"></h1>
+                    <h1 class="govuk-heading-xl"><#nested "header"></h1>
 
 
                     <#-- The GOV.UK Template is not designed for custom logos, so remove the Keycloak template’s logo HTML -->
