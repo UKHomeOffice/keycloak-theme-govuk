@@ -67,7 +67,7 @@
     <header class="govuk-header" role="banner" data-module="header">
         <div class="govuk-header__container govuk-width-container">
             <div class="govuk-header__logo">
-            <a href="#" class="govuk-header__link govuk-header__link--homepage">
+            <a href="/auth/realms/mspsds/account/applications" class="govuk-header__link govuk-header__link--homepage">
                 <span class="govuk-header__logotype">
 
                 <svg role="presentation" focusable="false" class="govuk-header__logotype-crown" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 132 97" height="32" width="36">
@@ -86,7 +86,7 @@
                     <#if realm.displayNameHtml?? && realm.displayNameHtml != realm.displayName>
                         <#--  ${realm.displayNameHtml?no_esc}  -->
                     <#elseif realm.displayName??>
-                        <a href="#" class="govuk-header__link govuk-header__link--service-name">${realm.displayName}</a>
+                        <a href="/auth/realms/mspsds/account/applications" class="govuk-header__link govuk-header__link--service-name">${realm.displayName}</a>
                     </#if>
                 </div>
             </#if>
