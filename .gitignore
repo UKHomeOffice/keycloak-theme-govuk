@@ -45,3 +45,6 @@ dist/
 
 # npm package-lock.json file (because maybe it has issues? https://github.com/npm/npm/issues/18144, https://github.com/npm/npm/issues/18375)
 package-lock.json
+
+# It's useful to open this submodule in IntelliJ, but it's never run on its own
+.idea
