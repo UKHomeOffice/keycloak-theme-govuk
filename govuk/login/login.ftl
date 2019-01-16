@@ -3,7 +3,7 @@
     <#if section = "title">
         ${msg("loginTitle",(realm.displayName!''))}
     <#elseif section = "header">
-        ${msg("loginTitleHtml",(realm.displayNameHtml!''))?no_esc}
+        ${msg("loginTitle",(realm.displayName!''))}
     <#elseif section = "form">
         <#if realm.password>
         <div class="govuk-grid-row">
