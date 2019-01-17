@@ -141,7 +141,9 @@
                                                 </h2>
                                                 <div class="govuk-error-summary__body">
                                                     <ul class="govuk-list govuk-error-summary__list" >
-                                                        <li>${message.summary}</li>
+                                                        <#list message.summary?split("<br>") as messageEntry>
+                                                            <li>${messageEntry}</li>
+                                                        </#list>
                                                     </ul>
                                                 </div>
                                             </div>
