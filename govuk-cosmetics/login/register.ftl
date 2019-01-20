@@ -43,11 +43,11 @@
 
             <div class="govuk-form-group ${messagesPerField.printIfExists('mobileNumber',properties.kcFormGroupErrorClass!)}">
                 <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="user.attributes.mobile_number" class="govuk-label">${msg("mobileNumber")}</label>
+                    <label for="mobileNumber" class="govuk-label">${msg("mobileNumber")}</label>
                     <span id="mobileNumber-hint" class="govuk-hint">${msg("mobileNumberHint")}</span>
                 </div>
                 <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="mobileNumber" class="govuk-input" name="user.attributes.mobile_number" autocomplete="tel" aria-describedby="mobileNumber-hint" />
+                    <input type="tel" id="mobileNumber" class="govuk-input" name="mobileNumber" value="${(register.formData.mobileNumber!'')}" autocomplete="mobile tel" aria-describedby="mobileNumber-hint" />
                 </div>
             </div>
 
