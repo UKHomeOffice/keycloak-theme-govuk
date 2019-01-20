@@ -37,7 +37,7 @@
                     <label for="email" class="govuk-label">${msg("registerEmailAddress")}</label>
                 </div>
                 <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="email" class="govuk-input" name="email" value="${(register.formData.email!'')}" autocomplete="email" />
+                    <input type="email" id="email" class="govuk-input" name="email" value="${(register.formData.email!'')}" autocomplete="work email" />
                 </div>
             </div>
 
