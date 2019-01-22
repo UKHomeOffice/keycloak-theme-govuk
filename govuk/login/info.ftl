@@ -1,9 +1,9 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout displayMessage=false; section>
     <#if section = "title">
-        ${message.summary}
+        ${msg("manageYourAccountTtitle")}
     <#elseif section = "header">
-        ${message.summary}
+        ${msg("manageYourAccountTtitle")}
     <#elseif section = "back">
     <#if client?? && client.baseUrl?has_content>
         <a class="link-back" href="${client.baseUrl}">${msg("backToApplication")}</a>
@@ -11,16 +11,12 @@
     <#elseif section = "form">
         <div id="kc-info-message">
             <#if requiredActions??>
-                <#list requiredActions>
-                    <ul class="list list-bullet">
-                        <#items as reqActionItem><li>${msg("requiredAction.${reqActionItem}")}</li></#items>
-                    </ul>
-                </#list>
+                ${msg("manageYourAccount")}
             </#if>
             <#if pageRedirectUri??>
                 <p><a class="button" href="${pageRedirectUri}">${msg("backToApplication")?no_esc}</a></p>
             <#elseif actionUri??>
-                <p><a class="button" href="${actionUri}">${msg("proceedWithAction")?no_esc}</a></p>
+                <p><a id="continueButton" class="button" href="${actionUri}">${msg("proceedWithAction")?no_esc}</a></p>
             <#elseif client.baseUrl??>
                 <#--
                     This is a hack to direct the users to the applications without the ability to supply the link
