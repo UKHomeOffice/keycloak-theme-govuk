@@ -55,6 +55,7 @@
     <!--[if IE 8]><link href="${url.resourcesPath}/css/application-ie8.css" rel="stylesheet" type="text/css"><![endif]-->
 
     <#-- End GOV.UK Design System stylesheet -->
+    <#nested "scripts">
 </head>
 
 <body class="govuk-template__body">

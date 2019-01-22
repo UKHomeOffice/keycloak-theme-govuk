@@ -2,6 +2,17 @@
 <@layout.registrationLayout displayMessage=false; section>
     <#if section = "title">
         ${msg("manageYourAccountTtitle")}
+    <#elseif section = "scripts">
+        <#--
+            This will only run on the page that tries to display required actions.
+            That page is pointless from UX POV, so we skip it where possible.
+            Keycloak doesn't provide a native way to skip it, hence the js hack.
+        -->
+        <#if requiredActions?? && actionUri??>
+            <script type="application/javascript">
+                document.location.href = "${actionUri?no_esc}"
+            </script>
+        </#if>
     <#elseif section = "header">
         ${msg("manageYourAccountTtitle")}
     <#elseif section = "back">
