@@ -24,10 +24,6 @@
                 </div>
 
                 <div class="govuk-form-group">
-                    <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
-                        <div class="${properties.kcFormOptionsWrapperClass!}">
-                        </div>
-                    </div>
                     <input class="govuk-button" type="submit" value="${msg("doSubmit")}"/>
                 </div>
             </form>

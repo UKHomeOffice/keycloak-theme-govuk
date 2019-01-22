@@ -138,7 +138,7 @@
                                         <#if message.type = 'error'>
                                             <div class="govuk-error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1" data-module="error-summary">
                                                 <h2 class="govuk-error-summary__title" id="error-summary-title">
-                                                    There is a problem with this form
+                                                    ${msg("validationErrorHeader")}
                                                 </h2>
                                                 <div class="govuk-error-summary__body">
                                                     <ul class="govuk-list govuk-error-summary__list" >

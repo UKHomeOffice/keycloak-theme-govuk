@@ -7,51 +7,30 @@
     <#elseif section = "form">
         <form id="kc-update-profile-form" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
             <#if user.editUsernameAllowed>
-                <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('username',properties.kcFormGroupErrorClass!)}">
-                    <div class="${properties.kcLabelWrapperClass!}">
-                        <label for="username" class="${properties.kcLabelClass!}">${msg("username")}</label>
-                    </div>
-                    <div class="${properties.kcInputWrapperClass!}">
-                        <input type="text" id="username" name="username" value="${(user.username!'')}" class="${properties.kcInputClass!}"/>
-                    </div>
+                <div class="govuk-form-group ${messagesPerField.printIfExists('username',properties.kcFormGroupErrorClass!)} hidden">
+                    <label for="username" class="govuk-label">${msg("username")}</label>
+                    <input type="text" id="username" name="username" class="govuk-input" value="${(user.username!'')}" />
                 </div>
             </#if>
-            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('email',properties.kcFormGroupErrorClass!)}">
-                <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="email" class="${properties.kcLabelClass!}">${msg("email")}</label>
-                </div>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="email" name="email" value="${(user.email!'')}" class="${properties.kcInputClass!}" />
-                </div>
+
+            <div class="govuk-form-group ${messagesPerField.printIfExists('email',properties.kcFormGroupErrorClass!)}">
+                <label for="email" class="govuk-label">${msg("email")}</label>
+                <input type="text" id="email" name="email" value="${(user.email!'')}" class="govuk-input" autofocus />
             </div>
 
-            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('firstName',properties.kcFormGroupErrorClass!)}">
-                <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="firstName" class="${properties.kcLabelClass!}">${msg("firstName")}</label>
-                </div>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="firstName" name="firstName" value="${(user.firstName!'')}" class="${properties.kcInputClass!}" />
-                </div>
+            <div class="govuk-form-group ${messagesPerField.printIfExists('firstName',properties.kcFormGroupErrorClass!)}">
+                <label for="email" class="govuk-label">${msg("firstName")}</label>
+                <input type="text" id="firstName" name="firstName" value="${(user.firstName!'')}" class="govuk-input" />
             </div>
 
-            <div class="${properties.kcFormGroupClass!} ${messagesPerField.printIfExists('lastName',properties.kcFormGroupErrorClass!)}">
-                <div class="${properties.kcLabelWrapperClass!}">
-                    <label for="lastName" class="${properties.kcLabelClass!}">${msg("lastName")}</label>
-                </div>
-                <div class="${properties.kcInputWrapperClass!}">
-                    <input type="text" id="lastName" name="lastName" value="${(user.lastName!'')}" class="${properties.kcInputClass!}" />
-                </div>
+            <#--We're hiding this field as keycloak needs it for validation, but we're using firstName to store the full name -->
+            <div hidden class="govuk-form-group ${messagesPerField.printIfExists('lastName',properties.kcFormGroupErrorClass!)}">
+                <label for="email" class="govuk-label">${msg("lastName")}</label>
+                <input type="text" id="lastName" name="lastName" value="${('UNUSED')}" class="govuk-input" />
             </div>
 
-            <div class="${properties.kcFormGroupClass!}">
-                <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
-                    <div class="${properties.kcFormOptionsWrapperClass!}">
-                    </div>
-                </div>
-
-                <div id="kc-form-buttons" class="${properties.kcFormButtonsClass!}">
-                    <input class="${properties.kcButtonClass!} ${properties.kcButtonPrimaryClass!} ${properties.kcButtonBlockClass!} ${properties.kcButtonLargeClass!}" type="submit" value="${msg("doSubmit")}" />
-                </div>
+            <div class="govuk-form-group">
+                <input class="govuk-button" type="submit" value="${msg("doSubmit")}"/>
             </div>
         </form>
     </#if>
