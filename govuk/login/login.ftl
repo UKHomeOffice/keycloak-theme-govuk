@@ -7,6 +7,7 @@
     <#elseif section = "form">
         <#if realm.password>
         <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full"><p>${msg("noAccountInstruction", msg("administrator"))}</p></div>
             <form id="kc-form-login" class="${properties.kcFormClass!} govuk-grid-column-two-thirds" action="${url.loginAction}" method="post">
                 <div class="govuk-form-group">
                     <label for="username" class="govuk-label"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
