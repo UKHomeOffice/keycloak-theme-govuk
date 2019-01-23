@@ -4,8 +4,6 @@
         ${msg("emailForgotTitle")}
     <#elseif section = "header">
         ${msg("emailForgotTitle")}
-    <#elseif section = "back">
-        <a class="link-back" href="${url.loginUrl}">${msg("backToLogin")}</a>
     <#elseif section = "form">
         <p class="govuk-body">${msg("emailInstruction")}</p>
         <div class="govuk-grid-row">
@@ -20,5 +18,6 @@
                 </div>
             </form>
         </div>
+        <p><a class="govuk-link" href="${url.loginUrl}">${msg("backToLogin")}</a></p>
     </#if>
 </@layout.registrationLayout>
