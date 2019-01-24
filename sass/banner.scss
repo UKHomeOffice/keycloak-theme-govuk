@@ -1,0 +1,61 @@
+/* ==========================================================================
+   #Banner
+   From: https://github.com/hmcts/frontend/blob/master/src/components/banner/_banner.scss
+   ========================================================================== */
+
+.hmcts-banner {
+  border: 5px solid govuk-colour("blue");
+  color: govuk-colour("blue");
+  font-size: 0; // Removes white space when using inline-block on child element.
+  margin-bottom: govuk-spacing(6);
+  padding: govuk-spacing(2);
+}
+
+
+.hmcts-banner__icon {
+  fill: currentColor;
+  float: left;
+  margin-right: govuk-spacing(2);
+}
+
+
+.hmcts-banner__message {
+  @include govuk-font($size: 19);
+  color: govuk-colour("black");
+  display: block;
+  overflow: hidden;
+}
+
+.hmcts-banner__message {
+  h2 {
+    margin-bottom: govuk-spacing(2);
+  }
+
+  h2:last-child {
+    margin-bottom: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.hmcts-banner__assistive {
+  @include govuk-visually-hidden;
+}
+
+
+/* Style variants
+   ========================================================================== */
+
+.hmcts-banner--success {
+  border-color: inherit;
+  color: govuk-colour("green");
+}
+
+
+.hmcts-banner--warning {
+  border-color: inherit;
+  color: govuk-colour("red");
+}

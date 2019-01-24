@@ -2,6 +2,7 @@ $govuk-images-path: "../assets/images/";
 $govuk-fonts-path: "../assets/fonts/";
 
 @import "node_modules/govuk-frontend/all";
+@import "./banner";
 
 .list.horizontal li {
   display: list-item;
@@ -9,3 +10,4 @@ $govuk-fonts-path: "../assets/fonts/";
     display: inline;
   }
 }
+
