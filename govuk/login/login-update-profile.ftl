@@ -12,8 +12,8 @@
                     <input type="text" id="username" name="username" class="govuk-input" value="${(user.username!'')}" />
                 </div>
             </#if>
-
-            <div class="govuk-form-group ${messagesPerField.printIfExists('email',properties.kcFormGroupErrorClass!)}">
+            <#--We're hiding this field as keycloak needs it for form validation, but we don't let users change it-->
+            <div hidden class="govuk-form-group ${messagesPerField.printIfExists('email',properties.kcFormGroupErrorClass!)}">
                 <label for="email" class="govuk-label">${msg("email")}</label>
                 <input type="text" id="email" name="email" value="${(user.email!'')}" class="govuk-input" autofocus />
             </div>

@@ -24,7 +24,8 @@
                     <input type="text" class="govuk-input" id="firstName" name="firstName" value="${(account.firstName!'')}"/>
                 </div>
 
-                <div class="govuk-form-group ${messagesPerField.printIfExists('lastName','govuk-form-group--error')}">
+                <#--We're hiding this field as keycloak needs it for validation, but we're using firstName to store the full name -->
+                <div hidden class="govuk-form-group ${messagesPerField.printIfExists('lastName','govuk-form-group--error')}">
                     <label for="lastName" class="govuk-label">${msg("lastName")} *</label>
                     <input type="text" class="govuk-input" id="lastName" name="lastName" value="${(account.lastName!'')}"/>
                 </div>
