@@ -4,8 +4,6 @@
         ${msg("registerWithTitle",(realm.displayName!''))}
     <#elseif section = "header">
         ${msg("registerWithTitleHtml",(realm.displayNameHtml!''))?no_esc}
-    <#elseif section = "back">
-        <a class="link-back" href="${url.loginUrl}">${msg("backToLogin")}</a>
     <#elseif section = "form">
         <form id="kc-register-form" class="${properties.kcFormClass!}" action="${url.registrationAction}" method="post">
           <input type="text" readonly value="this is not a login form" style="display: none;">

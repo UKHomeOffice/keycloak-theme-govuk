@@ -1,4 +1,4 @@
-<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true>
+<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true back=false>
 <!DOCTYPE html >
 
 <#-- Attempt to reverse-engineer code for page’s current language, as Keycloak does not currently make this available -->
@@ -98,7 +98,9 @@
 
     <#-- End GOV.UK Template header -->
     <div class="govuk-width-container">
-        <#nested "back">
+        <#if back>
+            <a href="${url.loginRestartFlowUrl}" class="govuk-back-link">${msg("backToLogin")}</a>
+        </#if>
         <main role="main" class="govuk-main-wrapper" id="main-content">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">

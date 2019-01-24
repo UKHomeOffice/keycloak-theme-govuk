@@ -1,5 +1,5 @@
 <#import "template.ftl" as layout>
-<@layout.registrationLayout displayInfo=true; section>
+<@layout.registrationLayout displayInfo=true back=true; section>
     <#if section = "title">
         ${msg("emailForgotTitle")}
     <#elseif section = "header">
