@@ -28,9 +28,9 @@
                  TODO MSPSDS-890
              -->
             <#if actionUri??>
-                <p><a id="continueButton" class="button" href="${actionUri}">${msg("proceedWithAction")?no_esc}</a></p>
+                <p><a id="continueButton" class="govuk-button" role="button" href="${actionUri}">${msg("proceedWithAction")?no_esc}</a></p>
             <#else>
-                <p><a class="button" href="https://mspsds-prod.london.cloudapps.digital">Market Surveillance & Product Safety</a></p>
+                <p><a class="govuk-link" href="https://mspsds-prod.london.cloudapps.digital">Market Surveillance & Product Safety</a></p>
                 <#--<p><a class="button" href="#">Cosmetics</a></p>-->
             </#if>
         </div>
