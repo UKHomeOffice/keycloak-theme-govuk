@@ -24,8 +24,10 @@
                     <input type="text" class="govuk-input" id="firstName" name="firstName" value="${(account.firstName!'')}"/>
                 </div>
 
-                <#--We're hiding this field as keycloak needs it for validation, but we're using firstName to store the full name -->
-                <input hidden type="text" class="govuk-input" id="lastName" name="lastName" value="${(account.lastName!'')}"/>
+                <div class="govuk-form-group ${messagesPerField.printIfExists('lastName','govuk-form-group--error')}">
+                    <label for="lastName" class="govuk-label">${msg("lastName")} *</label>
+                    <input type="text" class="govuk-input" id="lastName" name="lastName" value="${(account.lastName!'')}"/>
+                </div>
 
                 <div class="govuk-form-group">
                     <#if url.referrerURI??><a href="${url.referrerURI}">${kcSanitize(msg("backToApplication")?no_esc)}</a></#if>
