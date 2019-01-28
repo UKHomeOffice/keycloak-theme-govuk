@@ -135,7 +135,10 @@
 
                             <div id="kc-content" class="${properties.kcContentClass!}">
                                 <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">
-                                    <#if displayMessage && message?has_content && message.summary != "DONT_DISPLAY">
+                                    <#-- Sometimes keycloak puts messsages on the view model that we are not interested
+                                    in showing. Changing this behaviour would require overrding core parts in java -
+                                    instead we set them to the empty string. See `messages_en.properties` -->
+                                    <#if displayMessage && message?has_content && message.summary != "">
                                         <#if message.type = 'error'>
                                             <div class="govuk-error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1" data-module="error-summary">
                                                 <h2 class="govuk-error-summary__title" id="error-summary-title">
