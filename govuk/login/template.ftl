@@ -1,4 +1,4 @@
-<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true>
+<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true back=false>
 <!DOCTYPE html >
 
 <#-- Attempt to reverse-engineer code for page’s current language, as Keycloak does not currently make this available -->
@@ -55,6 +55,7 @@
     <!--[if IE 8]><link href="${url.resourcesPath}/css/application-ie8.css" rel="stylesheet" type="text/css"><![endif]-->
 
     <#-- End GOV.UK Design System stylesheet -->
+    <#nested "scripts">
 </head>
 
 <body class="govuk-template__body">
@@ -97,7 +98,9 @@
 
     <#-- End GOV.UK Template header -->
     <div class="govuk-width-container">
-        <#nested "back">
+        <#if back>
+            <a href="${url.loginRestartFlowUrl}" class="govuk-back-link">${msg("backToLogin")}</a>
+        </#if>
         <main role="main" class="govuk-main-wrapper" id="main-content">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
@@ -132,12 +135,14 @@
 
                             <div id="kc-content" class="${properties.kcContentClass!}">
                                 <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">
-
-                                    <#if displayMessage && message?has_content>
+                                    <#-- Sometimes keycloak puts messsages on the view model that we are not interested
+                                    in showing. Changing this behaviour would require overrding core parts in java -
+                                    instead we set them to the empty string. See `messages_en.properties` -->
+                                    <#if displayMessage && message?has_content && message.summary != "">
                                         <#if message.type = 'error'>
                                             <div class="govuk-error-summary" role="alert" aria-labelledby="error-summary-title" tabindex="-1" data-module="error-summary">
                                                 <h2 class="govuk-error-summary__title" id="error-summary-title">
-                                                    There is a problem with this form
+                                                    ${msg("validationErrorHeader")}
                                                 </h2>
                                                 <div class="govuk-error-summary__body">
                                                     <ul class="govuk-list govuk-error-summary__list" >
@@ -148,13 +153,29 @@
                                                 </div>
                                             </div>
                                         <#else>
-                                            <div class="${properties.kcFeedbackAreaClass!}">
-                                                <div class="alert alert-${message.type}"><p>
-                                                    <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
-                                                    <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
-                                                    <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-                                                    <span class="kc-feedback-text govuk-body">${message.summary}</span></p>
+                                            <#--Using the following banner style: https://github.com/hmcts/frontend/blob/master/src/components/banner/template.njk -->
+                                            <div class="hmcts-banner <#if message.type = 'success'>hmcts-banner--success<#elseif message.type = 'warning'>hmcts-banner--warning</#if>">
+                                                <#if message.type = 'success'>
+                                                    <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                                                        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+                                                    </svg>
+                                                </#if>
+                                                <#if message.type = 'warning'>
+                                                    <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                                                        <path d="M13.6,15.4h-2.3v-4.5h2.3V15.4z M13.6,19.8h-2.3v-2.2h2.3V19.8z M0,23.2h25L12.5,2L0,23.2z" />
+                                                    </svg>
+                                                </#if>
+                                                <#if message.type = 'info'>
+                                                    <svg class="hmcts-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                                                        <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                                                    </svg>
+                                                </#if>
+                                                <div class="hmcts-banner__message">
+                                                    <span class="hmcts-banner__assistive">Success</span>
+                                                    ${message.summary?no_esc}
                                                 </div>
+
                                             </div>
                                         </#if>
                                     </#if>

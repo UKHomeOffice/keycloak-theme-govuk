@@ -4,10 +4,6 @@
     ${msg("kerberosNotConfiguredTitle")}
     <#elseif section = "header">
     ${msg("kerberosNotConfigured")}
-    <#elseif section = "back">
-    <#if client?? && client.baseUrl?has_content>
-        <a class="link-back" href="${client.baseUrl}">${msg("backToApplication")}</a>
-    </#if>
     <#elseif section = "form">
     <div id="kc-info-message">
         <!-- <h3>${msg("kerberosNotConfigured")}</h3> -->

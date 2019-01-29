@@ -1,42 +1,38 @@
 <#import "template.ftl" as layout>
 <@layout.registrationLayout displayMessage=false; section>
-    <#if section = "title">
-        ${message.summary}
-    <#elseif section = "header">
-        ${message.summary}
-    <#elseif section = "back">
-    <#if client?? && client.baseUrl?has_content>
-        <a class="link-back" href="${client.baseUrl}">${msg("backToApplication")}</a>
-    </#if>
+    <#if section = "scripts">
+        <#--
+            This will only run on the page that tries to display required actions.
+            That page is pointless from UX POV, so we skip it where possible.
+            Keycloak doesn't provide a native way to skip it, hence the js hack.
+        -->
+        <#if requiredActions?? && actionUri??>
+            <script type="application/javascript">
+                document.location.href = "${actionUri?no_esc}"
+            </script>
+        </#if>
+    <#elseif section = "title" || section = "header">
+        ${msg(message.summary)}
     <#elseif section = "form">
         <div id="kc-info-message">
             <#if requiredActions??>
-                <#list requiredActions>
-                    <ul class="list list-bullet">
-                        <#items as reqActionItem><li>${msg("requiredAction.${reqActionItem}")}</li></#items>
-                    </ul>
-                </#list>
+                ${msg("manageYourAccount")}
             </#if>
-            <#if pageRedirectUri??>
-                <p><a class="button" href="${pageRedirectUri}">${msg("backToApplication")?no_esc}</a></p>
-            <#elseif actionUri??>
-                <p><a class="button" href="${actionUri}">${msg("proceedWithAction")?no_esc}</a></p>
-            <#elseif client.baseUrl??>
-                <#--
-                    This is a hack to direct the users to the applications without the ability to supply the link
-                    through the magic link redirect parameter.
-                    TODO MSPSDS-890
-                -->
-                <p><a class="button" href="https://mspsds-prod.london.cloudapps.digital">Market Surveillance & Product Safety</a></p>
+
+            <#--
+                 The hard-coded link below is a hack to direct the users to the applications without the ability to
+                 supply the link through the magic-link's redirect parameter.
+                 Keycloak does pass in a `pageRedirectUri` parameter to this if it's provided in the request,
+                 which could be helfpul for future work in this area.
+                 It also provides client.baseUrl, though the client defaults ot the `account` one.
+                 TODO MSPSDS-890
+             -->
+            <#if actionUri??>
+                <p><a id="continueButton" class="govuk-button" role="button" href="${actionUri}">${msg("proceedWithAction")?no_esc}</a></p>
+            <#else>
+                <p><a class="govuk-link" href="https://mspsds-prod.london.cloudapps.digital">Market Surveillance & Product Safety</a></p>
                 <#--<p><a class="button" href="#">Cosmetics</a></p>-->
-
-
-                <#--
-                    This would show a link back to the `account` application - not what we're looking for when we have
-                    actual application links hacked in.
-                    <p><a class="button" href="${client.baseUrl}">${msg("backToApplication")?no_esc}</a></p>
-                -->
-                </#if>
+            </#if>
         </div>
     </#if>
 </@layout.registrationLayout>
