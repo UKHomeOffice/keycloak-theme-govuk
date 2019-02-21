@@ -45,22 +45,16 @@
 
                 <input class="govuk-button" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
             </form>
-        </div>
-        <div class="govuk-grid-row">
-            <div class="${properties.kcFormOptionsWrapperClass!} govuk-form-group">
-                <#if realm.resetPasswordAllowed>
-                    <p><a class="govuk-link govuk-body" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></p>
-                </#if>
+            <div class="govuk-grid-column-full">
+                <div class="${properties.kcFormOptionsWrapperClass!} govuk-form-group">
+                    <#if realm.resetPasswordAllowed>
+                        <p><a class="govuk-link govuk-body" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></p>
+                    </#if>
+                </div>
             </div>
         </div>
         </#if>
     <#elseif section = "info" >
-        <#if realm.password && realm.registrationAllowed && !usernameEditDisabled??>
-            <div id="kc-registration">
-                <h2 class="heading-medium">${msg("noAccount")}</h2>
-                <p><a href="${url.registrationUrl}">${msg("registerLink")}</a></p>
-            </div>
-        </#if>
 
         <#if realm.password && social.providers??>
             <#-- This section of the theme has not yet been well styled. Non-trivial user research, interaction design and content design work is required to develop a solution for login using 3rd-party identity providers. -->
