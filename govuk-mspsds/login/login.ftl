@@ -3,21 +3,25 @@
     <#if section = "title">
         ${msg("loginTitle",(realm.displayName!''))}
     <#elseif section = "header">
-        ${msg("loginTitleHtml",(realm.displayNameHtml!''))?no_esc}
+        ${msg("loginTitle",(realm.displayName!''))}
     <#elseif section = "form">
         <#if realm.password>
+        <#--
+            Hack-alert: Keycloak doesn't provide per-field error messages here,
+            so we check global message for need to display validation error styling
+        -->
+        <#if message?has_content && message.type = "error">
+            <#assign errorClass = "govuk-form-group--error" >
+        </#if>
         <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full"><p>${msg("noAccountInstruction", msg("administrator"))}</p></div>
             <form id="kc-form-login" class="${properties.kcFormClass!} govuk-grid-column-two-thirds" action="${url.loginAction}" method="post">
-                <div class="govuk-form-group">
+                <div class="govuk-form-group ${errorClass!""}">
                     <label for="username" class="govuk-label"><#if !realm.loginWithEmailAllowed>${msg("username")}<#elseif !realm.registrationEmailAsUsername>${msg("usernameOrEmail")}<#else>${msg("email")}</#if></label>
-                    <#if usernameEditDisabled??>
-                        <input id="username" class="govuk-input" name="username" value="${(login.username!'')}" type="text" disabled />
-                    <#else>
-                        <input id="username" class="govuk-input" name="username" value="${(login.username!'')}" type="text" autofocus autocomplete="off" />
-                    </#if>
+                    <input id="username" class="govuk-input" name="username" value="${(login.username!'')}" type="text" autofocus autocomplete="off" />
                 </div>
 
-                <div class="govuk-form-group">
+                <div class="govuk-form-group ${errorClass!""}">
                     <label for="password" class="govuk-label">${msg("password")}</label>
                     <input id="password" class="govuk-input" name="password" type="password" autocomplete="off" />
                 </div>
@@ -40,13 +44,14 @@
                 </div>
 
                 <input class="govuk-button" name="login" id="kc-login" type="submit" value="${msg("doLogIn")}"/>
-
+            </form>
+            <div class="govuk-grid-column-full">
                 <div class="${properties.kcFormOptionsWrapperClass!} govuk-form-group">
                     <#if realm.resetPasswordAllowed>
                         <p><a class="govuk-link govuk-body" href="${url.loginResetCredentialsUrl}">${msg("doForgotPassword")}</a></p>
                     </#if>
                 </div>
-            </form>
+            </div>
         </div>
         </#if>
     <#elseif section = "info" >
