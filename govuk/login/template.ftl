@@ -1,4 +1,4 @@
-<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true back=false>
+<#macro registrationLayout bodyClass="" displayInfo=false displayMessage=true back=false backToApplication=false>
 <!DOCTYPE html >
 
 <#-- Attempt to reverse-engineer code for page’s current language, as Keycloak does not currently make this available -->
@@ -100,6 +100,12 @@
     <div class="govuk-width-container">
         <#if back>
             <a href="${url.loginRestartFlowUrl}" class="govuk-back-link">${msg("backToLogin")}</a>
+        <#elseif backToApplication>
+            <#if client?? && client.baseUrl?has_content>
+                <a href="${client.baseUrl}" class="govuk-back-link">${msg("backToLogin")}</a>
+            <#else>
+                <a href="${url.loginRestartFlowUrl}" class="govuk-back-link">${msg("backToLogin")}</a>
+            </#if>
         </#if>
         <main role="main" class="govuk-main-wrapper" id="main-content">
             <div class="govuk-grid-row">
