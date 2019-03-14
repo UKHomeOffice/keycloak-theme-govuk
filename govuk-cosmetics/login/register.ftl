@@ -5,6 +5,15 @@
     <#elseif section = "header">
         ${msg("registerWithTitleHtml",(realm.displayNameHtml!''))?no_esc}
     <#elseif section = "form">
+        <!-- Global Site Tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-126364208-2"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'GA_MEASUREMENT_ID');
+        </script>
         <form id="kc-register-form" class="${properties.kcFormClass!}" action="${url.registrationAction}" method="post">
           <input type="text" readonly value="this is not a login form" style="display: none;">
           <input type="password" readonly value="this is not a login form" style="display: none;">
