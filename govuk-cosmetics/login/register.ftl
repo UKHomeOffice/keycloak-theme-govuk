@@ -12,7 +12,7 @@
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', 'GA_MEASUREMENT_ID');
+          gtag('config', 'UA-126364208-2');
         </script>
         <form id="kc-register-form" class="${properties.kcFormClass!}" action="${url.registrationAction}" method="post">
           <input type="text" readonly value="this is not a login form" style="display: none;">
