@@ -30,7 +30,7 @@
             <#if actionUri??>
                 <p><a id="continueButton" class="govuk-button" role="button" href="${actionUri}">${msg("proceedWithAction")?no_esc}</a></p>
             <#else>
-                <p><a class="govuk-link" href="https://mspsds-prod.london.cloudapps.digital">Market Surveillance & Product Safety</a></p>
+                <p><a class="govuk-link" href="https://www.product-safety-database.service.gov.uk">Product safety database</a></p>
                 <#--<p><a class="button" href="#">Cosmetics</a></p>-->
             </#if>
         </div>
