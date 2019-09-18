@@ -1,38 +1,18 @@
-mariadb:
-  container_name: mariadb
-  image: mariadb:10.1.23
-  ports:
-  - "3306"
-  environment:
-    MYSQL_DATABASE: "keycloak"
-    MYSQL_PASSWORD: "password"
-    MYSQL_RANDOM_ROOT_PASSWORD: "yes"
-    MYSQL_USER: "keycloak"
-
 keycloak:
   container_name: keycloak
-  image: quay.io/ukhomeofficedigital/keycloak:v4.2.1-1
+  image: jboss/keycloak
   ports:
   - "8080:8080"
   links:
-  - mariadb
   - maildev
   volumes:
-  - ./.docker-compose/keycloak.env:/etc/secrets/keycloak.env
   - ./govuk/:/opt/jboss/keycloak/themes/govuk/
   - ./govuk-internal/:/opt/jboss/keycloak/themes/govuk-internal/
+  - ./govuk-oasys/:/opt/jboss/keycloak/themes/govuk-oasys/
   - ./govuk-social-providers/:/opt/jboss/keycloak/themes/govuk-social-providers/
   environment:
-    DB_VENDOR: "mysql"
-    KEYCLOAK_ENVIRONMENT: "/etc/secrets/keycloak.env"
     KEYCLOAK_PASSWORD: "admin"
     KEYCLOAK_USER: "admin"
-    MYSQL_PORT_3306_TCP_ADDR: "mariadb"
-    MYSQL_PORT_3306_TCP_PORT: "3306"
-    WAIT_ON_ADDR: "mariadb"
-    WAIT_ON_PORT: "3306"
-  command:
-  - -b 0.0.0.0 --server-config=standalone.xml
 
 maildev:
   container_name: maildev

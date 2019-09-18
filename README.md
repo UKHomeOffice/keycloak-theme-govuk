@@ -105,5 +105,3 @@ $ npm run build
 $ npm run dist
 ```
 The theme will then be packaged at `/govuk.tar.gz`.
-
-TODO: deploying to the UK Home Office hosting platform Keycloak Docker container. (i.e. ask for a new Docker Keycloak image to be built and deployed to Kubernetes on https://github.com/UKHomeOffice/hosting-platform-bau/issues)

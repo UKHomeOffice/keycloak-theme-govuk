@@ -20,10 +20,11 @@
     "build:sass:govuk_elements-ie7": "npm-sass sass/govuk_elements-ie7.scss > govuk/login/resources/css/govuk_elements-ie7.css",
     "build:sass:govuk_elements-ie8": "npm-sass sass/govuk_elements-ie8.scss > govuk/login/resources/css/govuk_elements-ie8.css",
     "build:sass:govuk-internal": "npm-sass sass/govuk-internal/govuk-internal.scss > govuk-internal/login/resources/css/govuk-internal.css",
-    "dist": "mkdir -p dist && npm-run-all dist:govuk dist:govuk-social-providers  dist:govuk-internal",
+    "dist": "mkdir -p dist && npm-run-all dist:govuk dist:govuk-social-providers  dist:govuk-internal dist:govuk-oasys",
     "dist:govuk": "tar -czf dist/govuk.tar.gz govuk/",
     "dist:govuk-social-providers": "tar -czf dist/govuk-social-providers.tar.gz govuk-social-providers/",
     "dist:govuk-internal": "tar -czf dist/govuk-internal.tar.gz govuk-internal/",
+    "dist:govuk-oasys": "tar -czf dist/govuk-oasys.tar.gz govuk-oasys/",
     "clean": "rm -rf govuk/login/resources/ govuk-internal/login/resources dist/"
   }
 }
