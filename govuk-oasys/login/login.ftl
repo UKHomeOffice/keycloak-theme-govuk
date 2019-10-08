@@ -61,8 +61,8 @@
                         </div>
 
                         <div id="kc-info-message">
-                               <h2 class="heading-medium">${msg("signInProblemsHeader")}</h2>
-                                <p class="instruction">${msg("signInProblems")}</p>
+                               <h2 class="govuk-heading-m">${msg("signInProblemsHeader")}</h2>
+                                <p class="govuk-body">${msg("signInProblems")}</p>
                         </div>
             </form>
 
