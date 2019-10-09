@@ -160,12 +160,12 @@
 
                             <#if displayMessage && message?has_content>
                                 <#if message.type = 'error'>
-                                    <div class="govuk-error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-                                        <h1 class="govuk-heading-m govuk-error-summary__title" id="error-summary-heading-example-1">
+                                    <div class="govuk-error-summary" role="group" aria-labelledby="error-summary-heading-1" tabindex="-1">
+                                        <h1 class="govuk-heading-m govuk-error-summary__title" id="error-summary-heading-1">
                                             There is a problem with this form
                                         </h1>
 
-                                        <ul class="govuk-error-summary__list" id="error-details">
+                                        <ul class="govuk-list govuk-error-summary__list" id="error-details">
                                             <li>${message.summary}</li>
                                         </ul>
                                     </div>
