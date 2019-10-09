@@ -1,0 +1,48 @@
+/* Global cookie message */
+.js-enabled #global-cookie-message {
+    display: none;
+    /* shown with JS, always on for non-JS */
+}
+
+#global-cookie-message {
+    width: 100%;
+    background-color: #d5e8f3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#global-cookie-message p {
+    font-family: "GDS Transport", Arial, sans-serif;
+    font-weight: 400;
+    text-transform: none;
+    font-size: 14px;
+    line-height: 1.14286;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+@media (min-width: 641px) {
+    #global-cookie-message p {
+        font-size: 16px;
+        line-height: 1.25;
+    }
+}
+
+.moj-header__link {
+    border-bottom: 1px solid transparent;
+    color: #ffffff;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 25px;
+    margin-bottom: -1px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.moj-header__link:focus {
+    outline: 3px solid transparent !important;
+    color: #0b0c0c !important;
+    background-color: #ffdd00 !important;
+    box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c !important;
+    text-decoration: none !important;
+}

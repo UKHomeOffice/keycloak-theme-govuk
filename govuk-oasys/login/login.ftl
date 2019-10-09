@@ -7,6 +7,9 @@
     <#elseif section = "form">
         <#if realm.password>
             <form id="kc-form-login" class="${properties.kcFormClass!}" action="${url.loginAction}" method="post">
+                <h1 class="govuk-heading-l">
+                    ${msg("loginTitleText")}
+                </h1>
                 <div class="${properties.kcFormGroupClass!}">
                     <div class="${properties.kcLabelWrapperClass!}">
                         <label for="username" class="${properties.kcLabelClass!}">${msg("username")}</label>
@@ -61,9 +64,11 @@
                         </div>
 
                         <div id="kc-info-message">
-                               <h2 class="heading-medium">${msg("signInProblemsHeader")}</h2>
-                                <p class="instruction">${msg("signInProblems")}</p>
+                               <h2 class="govuk-heading-m">${msg("signInProblemsHeader")}</h2>
+                                <p class="govuk-body">${msg("signInProblems")}</p>
                         </div>
+
+                <p><a class="govuk-link" href="${properties.kcOasysLink}">${msg("oasysLinkText")}</a></p>
             </form>
 
 
