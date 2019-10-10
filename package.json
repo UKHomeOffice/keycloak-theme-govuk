@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "npm-run-all build:assets build:sass",
-    "build:assets": "npm-run-all build:assets:govuk_template build:assets:govuk_frontend_toolkit build:sass",
+    "build:assets": "npm-run-all build:assets:govuk_template build:assets:govuk_frontend_toolkit build:assets:govuk-oasys build:sass",
     "build:assets:govuk_template": "mkdir -p govuk/login/resources/vendor && cp -R node_modules/govuk_template_jinja/assets/ govuk/login/resources/vendor/govuk_template",
     "build:assets:govuk_frontend_toolkit": "mkdir -p govuk/login/resources/vendor/govuk_frontend_toolkit/javascripts && npm-run-all build:assets:govuk_frontend_toolkit:images build:assets:govuk_frontend_toolkit:js",
     "build:assets:govuk_frontend_toolkit:images": "cp -R node_modules/govuk_frontend_toolkit/images/ govuk/login/resources/vendor/govuk_frontend_toolkit/",
