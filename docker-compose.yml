@@ -21,6 +21,7 @@ keycloak:
   - ./.docker-compose/keycloak.env:/etc/secrets/keycloak.env
   - ./govuk/:/opt/jboss/keycloak/themes/govuk/
   - ./govuk-internal/:/opt/jboss/keycloak/themes/govuk-internal/
+  - ./govuk-cop/:/opt/jboss/keycloak/themes/govuk-cop/
   - ./govuk-social-providers/:/opt/jboss/keycloak/themes/govuk-social-providers/
   environment:
     DB_VENDOR: "mariadb"
