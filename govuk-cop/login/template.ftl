@@ -129,6 +129,15 @@
         <div><#nested "back"></div>
 
         <div class="grid-row">
+            <div class="column-one-third">
+                <#if displayInfo>
+                    <div id="kc-info" class="${properties.kcInfoAreaClass!}">
+                        <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
+                            <#nested "info">
+                        </div>
+                    </div>
+                </#if>
+            </div>
             <div class="column-two-thirds">
                 <h1 class="heading-large"><#nested "title"></h1>
 
@@ -195,16 +204,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="column-one-third">
-                <#if displayInfo>
-                    <div id="kc-info" class="${properties.kcInfoAreaClass!}">
-                        <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
-                            <#nested "info">
-                        </div>
-                    </div>
-                </#if>
             </div>
         </div>
     </main>
