@@ -49,11 +49,6 @@
     <!--[if lt IE 9]><script src="${url.resourcesPath}/vendor/govuk_template/javascripts/ie.js?0.22.1"></script><![endif]-->
 
     <link rel="shortcut icon" href="${url.resourcesPath}/images/cop-favicon.ico" type="image/x-icon" />
-    <link rel="mask-icon" href="${url.resourcesPath}/vendor/govuk_template/images/gov.uk_logotype_crown.svg?0.22.1" color="#0b0c0c">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="${url.resourcesPath}/vendor/govuk_template/images/apple-touch-icon-152x152.png?0.22.1">
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="${url.resourcesPath}/vendor/govuk_template/images/apple-touch-icon-120x120.png?0.22.1">
-    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="${url.resourcesPath}/vendor/govuk_template/images/apple-touch-icon-76x76.png?0.22.1">
-    <link rel="apple-touch-icon-precomposed" href="${url.resourcesPath}/vendor/govuk_template/images/apple-touch-icon-60x60.png?0.22.1">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta property="og:image" content="${url.resourcesPath}/vendor/govuk_template/images/opengraph-image.png?0.22.1">
@@ -194,6 +189,13 @@
                                     </#if>
                                 </#if>
 
+                                <#if displayInfo>
+                                  <div id="kc-info" class="${properties.kcInfoAreaClass!}">
+                                      <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
+                                          <#nested "info">
+                                      </div>
+                                  </div>
+                                </#if>
                                 <div id="kc-form" class="${properties.kcFormAreaClass!}">
                                     <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
                                         <#nested "form">
@@ -239,6 +241,7 @@
     <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
 
     <#-- End GOV.UK Template footer -->
+    <script src="${url.resourcesPath}/javascripts/details.polyfill.js"></script>
 </body>
 </html>
 </#macro>
