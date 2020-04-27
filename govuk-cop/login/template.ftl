@@ -124,7 +124,12 @@
         <div><#nested "back"></div>
 
         <div class="grid-row">
-            <div class="column-one-third">
+            <div class="column-full">
+                <h1 class="heading-large"><#nested "title"></h1>
+                <p>The Central Operation Platform (COP) enables POISE users to access services on Windows 10, Edge browser equipped desktops or laptops and via Android and Apple mobile devices.</p>
+                <p>Click <a href="https://training.cop.homeoffice.gov.uk/" target="_blank">how to use COP</a> for <strong>guidance and user guides</strong> for COP account set-up and services.</p>
+                <p><strong>Existing users</strong> - To sign in to COP, on your POISE device, please click the green button below.</p>
+                <p><strong>New users</strong> - To create a new account please click the green button below and follow the registration process.</p>
                 <#if displayInfo>
                     <div id="kc-info" class="${properties.kcInfoAreaClass!}">
                         <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
@@ -132,80 +137,12 @@
                         </div>
                     </div>
                 </#if>
-            </div>
-            <div class="column-two-thirds">
-                <h1 class="heading-large"><#nested "title"></h1>
-
-
-                <#-- The GOV.UK Template is not designed for custom logos, so remove the Keycloak template’s logo HTML -->
-                <#-- <div id="kc-logo"><a href="${properties.kcLogoLink!'#'}"><div id="kc-logo-wrapper"></div></a></div> -->
-
-                <div id="kc-container" class="${properties.kcContainerClass!}">
-                    <div id="kc-container-wrapper" class="${properties.kcContainerWrapperClass!}">
-
-                        <#-- The GOV.UK Template header is included above, with Keycloak’s nested header section inside it, so remove the Keycloak template’s header HTML -->
-                        <#-- <div id="kc-header" class="${properties.kcHeaderClass!}">
-                            <div id="kc-header-wrapper" class="${properties.kcHeaderWrapperClass!}"><#nested "header"></div>
-                        </div>-->
-
-                        <#if realm.internationalizationEnabled>
-                            <div id="kc-locale" class="${properties.kcLocaleClass!}">
-                                <div id="kc-locale-wrapper" class="${properties.kcLocaleWrapperClass!}">
-                                    <div class="kc-dropdown" id="kc-locale-dropdown">
-                                        <a href="#" id="kc-current-locale-link">${locale.current}</a>
-                                        <ul>
-                                            <#list locale.supported as l>
-                                                <li class="kc-dropdown-item"><a href="${l.url}">${l.label}</a></li>
-                                            </#list>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </#if>
-
-                        <div id="kc-content" class="${properties.kcContentClass!}">
-                            <div id="kc-content-wrapper" class="${properties.kcContentWrapperClass!}">
-
-                                <#if displayMessage && message?has_content>
-                                    <#if message.type = 'error'>
-                                        <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
-                                            <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-                                                There is a problem with this form
-                                            </h1>
-
-                                            <ul class="error-summary-list" id="error-details">
-                                                <li>${message.summary}</li>
-                                            </ul>
-                                        </div>
-                                    <#else>
-                                        <div class="${properties.kcFeedbackAreaClass!}">
-                                            <div class="alert alert-${message.type}"><p>
-                                                <#if message.type = 'success'><span class="${properties.kcFeedbackSuccessIcon!}"></span></#if>
-                                                <#if message.type = 'warning'><span class="${properties.kcFeedbackWarningIcon!}"></span></#if>
-                                                <#if message.type = 'info'><span class="${properties.kcFeedbackInfoIcon!}"></span></#if>
-                                                <span class="kc-feedback-text">${message.summary}</span></p>
-                                            </div>
-                                        </div>
-                                    </#if>
-                                </#if>
-
-                                <#if displayInfo>
-                                  <div id="kc-info" class="${properties.kcInfoAreaClass!}">
-                                      <div id="kc-info-wrapper" class="${properties.kcInfoAreaWrapperClass!}">
-                                          <#nested "info">
-                                      </div>
-                                  </div>
-                                </#if>
-                                <div id="kc-form" class="${properties.kcFormAreaClass!}">
-                                    <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
-                                        <#nested "form">
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <h2 class="heading-small help-heading">Have a Problem?</h2>
+                <p>If you encounter any issues using COP, please follow one of these procedures:</p>
+                <ul class="list help-list">
+                    <li><strong>If you cannot create a COP account or sign into COP</strong>, please log your issue via <a href="https://lssiprod.service-now.com/ess" target="_blank">the IT Now</a> servicedesk or call 0845 000 0050, state you are unable to access COP and provide details of whether you are using a laptop, desktop or smartphone. The IT Now servicedesk is operational 24 hours a day, 7 days a week.</li>
+                    <li><strong>If you have created a COP account</strong> you can ask for support, provide feedback or contact us here <a href="https://support.cop.homeoffice.gov.uk/servicedesk/customer/portal/3" target="_blank">COP service desk</a> or by pressing the <strong>Support</strong> link in the COP main header section.</li>
+                </ul>
             </div>
         </div>
     </main>
@@ -241,7 +178,6 @@
     <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
 
     <#-- End GOV.UK Template footer -->
-    <script src="${url.resourcesPath}/javascripts/details.polyfill.js"></script>
 </body>
 </html>
 </#macro>
