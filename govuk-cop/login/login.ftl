@@ -71,7 +71,11 @@
             <div id="kc-social-providers">
                 <ul class="list horizontal">
                     <#list social.providers as p>
-                        <li><a href="${p.loginUrl}" id="zocial-${p.alias}" class="button zocial ${p.providerId}">${p.displayName}</a></li>
+                        <#if p.alias = "O365">
+                            <li><a href="${p.loginUrl}" id="zocial-${p.alias}" class="button button-secondary zocial ${p.providerId}">${p.displayName}</a></li>
+                        <#else>
+                            <li><a href="${p.loginUrl}" id="zocial-${p.alias}" class="button zocial ${p.providerId}">${p.displayName}</a></li>
+                        </#if>
                     </#list>
                 </ul>
             </div>
