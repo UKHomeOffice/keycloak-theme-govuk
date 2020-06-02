@@ -137,6 +137,11 @@
                         </div>
                     </div>
                 </#if>
+                <div id="kc-form" class="${properties.kcFormAreaClass!}">
+                    <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
+                        <#nested "form">
+                    </div>
+                </div>
                 <h2 class="heading-small help-heading">Have a Problem?</h2>
                 <p>If you encounter any issues using COP, please follow one of these procedures:</p>
                 <ul class="list help-list">
@@ -178,6 +183,7 @@
     <script>if (typeof window.GOVUK === 'undefined') document.body.className = document.body.className.replace('js-enabled', '');</script>
 
     <#-- End GOV.UK Template footer -->
+    <script src="${url.resourcesPath}/javascripts/details.polyfill.js"></script>
 </body>
 </html>
 </#macro>
