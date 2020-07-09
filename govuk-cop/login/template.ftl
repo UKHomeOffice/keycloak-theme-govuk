@@ -126,7 +126,7 @@
         <div class="grid-row">
             <div class="column-full">
                 <h1 class="heading-large"><#nested "title"></h1>
-                <p>The Central Operation Platform (COP) enables POISE users to access services on Windows 10, Edge browser equipped desktops or laptops and via Android and Apple mobile devices.</p>
+                <p>The Central Operations Platform (COP) enables POISE users to access services on Windows 10, Edge browser equipped desktops or laptops and via Android and Apple mobile devices.</p>
                 <p>Click <a href="https://training.cop.homeoffice.gov.uk/" target="_blank">how to use COP</a> for <strong>guidance and user guides</strong> for COP account set-up and services.</p>
                 <p><strong>Existing users</strong> - To sign in to COP, on your POISE device, please click the green button below.</p>
                 <p><strong>New users</strong> - To create a new account please click the green button below and follow the registration process.</p>
