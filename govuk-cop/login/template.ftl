@@ -127,7 +127,7 @@
             <div class="column-full">
                 <h1 class="heading-large"><#nested "title"></h1>
                 <p>The Central Operations Platform (COP) enables POISE users to access services on Windows 10, Edge browser equipped desktops or laptops and via Android and Apple mobile devices.</p>
-                <p>Click <a href="https://training.cop.homeoffice.gov.uk/" target="_blank">how to use COP</a> for <strong>guidance and user guides</strong> for COP account set-up and services.</p>
+                <p>Click <a href="https://product.cop.homeoffice.gov.uk/" target="_blank">how to use COP</a> for <strong>guidance and user guides</strong> for COP account set-up and services.</p>
                 <p><strong>Existing users</strong> - To sign in to COP, on your POISE device, please click the green button below.</p>
                 <p><strong>New users</strong> - To create a new account please click the green button below and follow the registration process.</p>
                 <#if displayInfo>
@@ -145,8 +145,8 @@
                 <h2 class="heading-small help-heading">Have a Problem?</h2>
                 <p>If you encounter any issues using COP, please follow one of these procedures:</p>
                 <ul class="list help-list">
-                    <li><strong>If you cannot create a COP account or sign into COP</strong>, please log your issue via <a href="https://lssiprod.service-now.com/ess" target="_blank">the IT Now</a> servicedesk or call 0845 000 0050, state you are unable to access COP and provide details of whether you are using a laptop, desktop or smartphone. The IT Now servicedesk is operational 24 hours a day, 7 days a week.</li>
-                    <li><strong>If you have created a COP account</strong> you can ask for support, provide feedback or contact us here <a href="https://support.cop.homeoffice.gov.uk/servicedesk/customer/portal/3" target="_blank">COP service desk</a> or by pressing the <strong>Support</strong> link in the COP main header section.</li>
+                    <li><strong>If you cannot create a COP account or sign into COP</strong>, please log your issue via the <a href="https://lssiprod.service-now.com/ess" target="_blank">IT Now servicedesk</a>. State you are unable to access COP and provide details of whether you are using a laptop, desktop or smartphone. The IT Now servicedesk is operational 24 hours a day, 7 days a week.</li>
+                    <li><strong>If you have created a COP account</strong> you can ask for support, provide feedback or contact us using the <a href="https://support.cop.homeoffice.gov.uk/servicedesk/customer/portal/3" target="_blank">COP servicedesk</a> or by pressing the <strong>Support</strong> link in the COP main header section.</li>
                 </ul>
             </div>
         </div>
