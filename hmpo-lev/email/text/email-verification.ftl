@@ -1,1 +1,1 @@
-${msg("emailVerificationBody",linkExpirationFormatter(linkExpiration), user.firstName, link)?no_esc}
+${msg("emailVerificationBody",linkExpirationFormatter(linkExpiration), user.firstName, user.lastName, link)?no_esc}

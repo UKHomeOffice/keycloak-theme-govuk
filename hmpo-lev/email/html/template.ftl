@@ -7,21 +7,8 @@
       font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
     }
 
-    p, td, li {
+    p, li, a {
       font-size: 19px;
-    }
-
-    .verificationlink td {
-      padding: 0;
-      line-height: 1.2;
-    }
-
-    .verificationlink a {
-      display: inline-block;
-      padding: 10px 15px;
-      text-decoration: none;
-      background: #00823B;
-      color: #FFFFFF;
     }
 
   </style>
@@ -39,7 +26,7 @@
     </table>
     </#if>
 
-    <p>Hi ${user.firstName!user.username!"user"},</p>
+    <p>Dear <#if user.firstName?? && user.lastName??>${user.firstName + " " + user.lastName}<#else>${"user"}</#if>,</p>
 
     <#nested "text">
 
