@@ -22,6 +22,7 @@ keycloak:
   - ./govuk/:/opt/jboss/keycloak/themes/govuk/
   - ./govuk-internal/:/opt/jboss/keycloak/themes/govuk-internal/
   - ./govuk-cop/:/opt/jboss/keycloak/themes/govuk-cop/
+  - ./hmpo-lev/:/opt/jboss/keycloak/themes/hmpo-lev/
   - ./govuk-social-providers/:/opt/jboss/keycloak/themes/govuk-social-providers/
   environment:
     DB_VENDOR: "mariadb"
