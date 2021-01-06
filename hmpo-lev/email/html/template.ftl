@@ -5,16 +5,6 @@
     body {
       color: #000;
       font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
-      background: #FFFFFF;
-    }
-
-    #banner {
-        width: 100%;
-        background: #000000;
-        padding: 15px;
-        font-size: 24px;
-        color: #FFFFFF;
-        font-weight: bold;
     }
 
     p, li, a {
@@ -23,8 +13,12 @@
 
   </style>
   </head>
-  <body>
-    <div id="banner">Life Event Verification</div>
+  <body text="#000000" bgcolor="#FFFFFF">
+  <#if realmName??>
+    <table width="100%" bgcolor="#000000" cellspacing="0" cellpadding="15">
+      <tr><td><font style="font-size:24px;" size="5" color="#FFFFFF"><b>Life Event Verification</b></font></td></tr>
+    </table>
+  </#if>
 
     <p>Dear <#if user.firstName?? && user.lastName??>${user.firstName + " " + user.lastName}<#else>${"user"}</#if>,</p>
 
