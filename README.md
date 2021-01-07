@@ -39,7 +39,9 @@ $ npm run build
 The theme will then be built at `/govuk`, ready for use in the local Keycloak server.
 
 ### Local Keycloak server
-A local Keycloak server for developing and testing the theme is available as a Docker container.
+A local Keycloak server for developing and testing the theme is available as a Docker container. Ensure that the latest version of the docker container is used in `docker-compose.yml`. The latest version can be found at: 
+
+https://quay.io/repository/ukhomeofficedigital/keycloak?tab=tags
 
 To bring up the server, make sure you’ve installed and started [Docker Community Edition](https://docs.docker.com/engine/installation/), then use the following commands:
 ```bash
