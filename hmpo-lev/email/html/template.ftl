@@ -14,11 +14,9 @@
   </style>
   </head>
   <body text="#000000" bgcolor="#FFFFFF">
-  <#if realmName??>
     <table width="100%" bgcolor="#000000" cellspacing="0" cellpadding="15">
       <tr><td><font style="font-size:24px;" size="5" color="#FFFFFF"><b>Life Event Verification</b></font></td></tr>
     </table>
-  </#if>
 
     <p>Dear <#if user.firstName?? && user.lastName??>${user.firstName + " " + user.lastName}<#else>${"user"}</#if>,</p>
 
