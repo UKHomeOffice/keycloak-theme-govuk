@@ -22,6 +22,9 @@
 
     <#nested "text">
 
+    <p>Thanks</p>
+    <p>The LEV Team.</p>
+
   </body>
 </html>
 </#macro>
