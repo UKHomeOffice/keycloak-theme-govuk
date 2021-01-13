@@ -1,3 +1,4 @@
+<#import "../utils.ftl" as constants>
 <#macro htmlEmailLayout>
 <html>
   <head>
