@@ -18,7 +18,7 @@
       <tr><td><font style="font-size:24px;" size="5" color="#FFFFFF"><b>Life Event Verification</b></font></td></tr>
     </table>
 
-    <p>Dear <#if user.firstName?? && user.lastName??>${user.firstName + " " + user.lastName}<#else>${"user"}</#if>,</p>
+    <p>Dear <#if user.firstName??>${user.firstName}<#else>${"user"}</#if>,</p>
 
     <#nested "text">
 
