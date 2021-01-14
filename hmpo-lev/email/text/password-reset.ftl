@@ -1,1 +1,3 @@
-${msg("passwordResetBody",linkExpirationFormatter(linkExpiration), user.firstName, user.lastName, link)?no_esc}
+<#import "../utils.ftl" as constants>
+
+${msg("passwordResetBody",linkExpirationFormatter(linkExpiration), user.firstName, link, constants.serviceLinks)?no_esc}
