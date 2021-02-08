@@ -44,3 +44,8 @@ dist/
 
 # npm package-lock.json file (because maybe it has issues? https://github.com/npm/npm/issues/18144, https://github.com/npm/npm/issues/18375)
 package-lock.json
+
+#IDE
+.idea
+
+
