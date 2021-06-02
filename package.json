@@ -2,8 +2,8 @@
   "name": "keycloak-theme-govuk",
   "version": "2.0.9",
   "devDependencies": {
-    "govuk-elements-sass": "3.1.0",
     "govuk_template_jinja": "0.22.1",
+    "govuk-elements-sass": "3.1.0",
     "npm-run-all": "^4.0.2",
     "npm-sass": "^2.2.1"
   },
