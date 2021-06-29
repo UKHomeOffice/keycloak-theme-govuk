@@ -21,13 +21,14 @@
     "build:sass:govuk_elements-ie8": "npm-sass sass/govuk_elements-ie8.scss > govuk/login/resources/css/govuk_elements-ie8.css",
     "build:sass:govuk-internal": "npm-sass sass/govuk-internal/govuk-internal.scss > govuk-internal/login/resources/css/govuk-internal.css",
     "build:sass:govuk-cop": "npm-sass sass/govuk-cop/govuk-cop.scss > govuk-cop/login/resources/css/govuk-cop.css",
-    "dist": "mkdir -p dist && npm-run-all dist:govuk dist:govuk-social-providers dist:govuk-internal dist:govuk-cop dist:hmpo-lev dist:govuk-drt",
+    "dist": "mkdir -p dist && npm-run-all dist:govuk dist:govuk-social-providers dist:govuk-internal dist:govuk-cop dist:hmpo-lev dist:govuk-drt dist:govuk-internal-dq",
     "dist:govuk": "tar -czf dist/govuk.tar.gz govuk/",
     "dist:govuk-social-providers": "tar -czf dist/govuk-social-providers.tar.gz govuk-social-providers/",
     "dist:govuk-internal": "tar -czf dist/govuk-internal.tar.gz govuk-internal/",
     "dist:govuk-cop": "tar -czf dist/govuk-cop.tar.gz govuk-cop/",
     "dist:hmpo-lev": "tar -czf dist/hmpo-lev.tar.gz hmpo-lev/",
     "dist:govuk-drt": "tar -czf dist/govuk-drt.tar.gz govuk-drt/",
+    "dist:govuk-internal-dq": "tar -czf dist/govuk-internal-dq.tar.gz govuk-internal-dq/",
     "clean": "rm -rf govuk/login/resources/ govuk-internal/login/resources govuk-cop/login/resources/css dist/"
   }
 }

@@ -21,6 +21,7 @@ keycloak:
   - ./.docker-compose/keycloak.env:/etc/secrets/keycloak.env
   - ./govuk/:/opt/jboss/keycloak/themes/govuk/
   - ./govuk-internal/:/opt/jboss/keycloak/themes/govuk-internal/
+  - ./govuk-internal-dq/:/opt/jboss/keycloak/themes/govuk-internal-dq/
   - ./govuk-cop/:/opt/jboss/keycloak/themes/govuk-cop/
   - ./hmpo-lev/:/opt/jboss/keycloak/themes/hmpo-lev/
   - ./govuk-social-providers/:/opt/jboss/keycloak/themes/govuk-social-providers/
