@@ -26,6 +26,7 @@ keycloak:
   - ./hmpo-lev/:/opt/jboss/keycloak/themes/hmpo-lev/
   - ./govuk-social-providers/:/opt/jboss/keycloak/themes/govuk-social-providers/
   - ./govuk-drt/:/opt/jboss/keycloak/themes/govuk-drt/
+  - ./govuk-rscas/:/opt/jboss/keycloak/themes/govuk-rscas/
   environment:
     DB_VENDOR: "mariadb"
     MARIADB_PORT: "3306"
