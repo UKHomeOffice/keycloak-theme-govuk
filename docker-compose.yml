@@ -11,7 +11,7 @@ mariadb:
 
 keycloak:
   container_name: keycloak
-  image: quay.io/ukhomeofficedigital/keycloak:v11.0.2-5
+  image: quay.io/ukhomeofficedigital/keycloak:v15.0.2
   ports:
   - "8080:8080"
   links:
@@ -27,6 +27,7 @@ keycloak:
   - ./hmpo-lev/:/opt/jboss/keycloak/themes/hmpo-lev/
   - ./govuk-social-providers/:/opt/jboss/keycloak/themes/govuk-social-providers/
   - ./govuk-drt/:/opt/jboss/keycloak/themes/govuk-drt/
+  - ./govuk-rscas/:/opt/jboss/keycloak/themes/govuk-rscas/
   environment:
     DB_VENDOR: "mariadb"
     MARIADB_PORT: "3306"
