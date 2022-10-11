@@ -11,7 +11,7 @@ mariadb:
 
 keycloak:
   container_name: keycloak
-  image: quay.io/ukhomeofficedigital/keycloak:v15.0.2
+  image: quay.io/ukhomeofficedigital/keycloak:v15.0.2-3
   ports:
   - "8080:8080"
   links:
