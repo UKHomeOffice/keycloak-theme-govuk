@@ -193,7 +193,8 @@
 
                                             <ul class="error-summary-list" id="error-details">
                                                 <li>${message.summary}</li>
-                                                <li>If you don't have an account for ${login.username} username in DRT then please contact drtpoiseteam@homeoffice.gov.uk.</li>
+                                                <li>If you don't have an account for <#if login.username??>
+                                                        ${login.username}</#if> username in DRT then please contact drtpoiseteam@homeoffice.gov.uk.</li>
                                             </ul>
                                         </div>
                                     <#else>
