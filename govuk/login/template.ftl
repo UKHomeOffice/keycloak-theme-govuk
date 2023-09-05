@@ -173,7 +173,7 @@
                                     <#if message.type = 'error'>
                                         <div class="error-summary" role="group" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
                                             <h1 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
-                                                There is a problem with this form
+                                                There is a problem
                                             </h1>
 
                                             <ul class="error-summary-list" id="error-details">
