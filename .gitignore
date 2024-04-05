@@ -37,7 +37,8 @@ jspm_packages
 .node_repl_history
 
 # Built files
-govuk/login/resources/
+govuk/login/resources/css/
+govuk/login/resources/vendor/
 govuk-cop/login/resources/css/
 govuk-internal/login/resources/
 dist/
