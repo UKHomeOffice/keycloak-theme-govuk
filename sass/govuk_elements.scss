@@ -27,3 +27,8 @@ $path: "../vendor/govuk_frontend_toolkit/images/";// Path to Frontend Toolkit im
     display: inline;
   }
 }
+
+/* Override the govuk_template_jinja css files with the new crown logo (Kings Tudor Crown) */
+header#global-header #logo {
+	background: url("../assets/crown-logo.svg") no-repeat;
+}
