@@ -27,7 +27,7 @@
                         <div class="${properties.kcLabelWrapperClass!}">
                             <label for="otp" class="${properties.kcLabelClass!}">${msg("loginOtpOneTime")}</label>
                         </div>
-                        <p>The one-time code is available in the Google Authenticator application, which you downloaded to your mobile phone when you set up this account</p>
+                        <p>The one-time code is available in the FreeOTP Authenticator application, which you downloaded to your mobile phone when you set up this account</p>
 
                         <div class="${properties.kcInputWrapperClass!}">
                             <input id="otp" name="otp" autocomplete="off" type="text" class="${properties.kcInputClass!}"
