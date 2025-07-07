@@ -47,7 +47,10 @@ To bring up the server, make sure you’ve installed and started [Docker Communi
 ```bash
 $ npm install
 $ npm run build
+# Run command for Keycloak v22, or...
 $ docker-compose up
+# Run command for Keycloak v15
+$ docker-compose -f docker-compose-v15.yml up
 ```
 The Keycloak server will now be available on <http://localhost:8080>. You can log into the Administration Console using “**admin**” as both username and password.
 
@@ -70,7 +73,7 @@ To set up the local Keycloak server to send e-mails to MailDev:
 
     - Host: **maildev**
 
-    - From: **keycloak@keycloak**
+    - From: **keycloak@keycloak.com**
 
 4. Click on “Save”
 
