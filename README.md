@@ -52,7 +52,7 @@ $ docker-compose up
 # Run command for Keycloak v15
 $ docker-compose -f docker-compose-v15.yml up
 ```
-The Keycloak server will now be available on <http://localhost:8080>. You can log into the Administration Console using “**admin**” as both username and password.
+The Keycloak server will now be available on <http://localhost:8080/admin>. You can log into the Administration Console using “**admin**” as both username and password.
 
 <img alt="" src="docs/images/keycloak-local.png" width="512" height="300">
 
