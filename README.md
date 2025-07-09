@@ -48,7 +48,7 @@ To bring up the server, make sure you’ve installed and started [Docker Communi
 $ npm install
 $ npm run build
 # Run command for Keycloak v22, or...
-$ docker-compose up
+$ docker-compose -f docker-compose-v22.yml up
 # Run command for Keycloak v15
 $ docker-compose -f docker-compose-v15.yml up
 ```
