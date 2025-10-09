@@ -38,18 +38,18 @@
                                        autocomplete="off"/>
                             </div>
                         </div>
-                        
+
                         <div id="kc-form-options" class="${properties.kcFormOptionsClass!}">
                             <#if realm.rememberMe && !usernameEditDisabled??>
                                 <div class="checkbox ${properties.kcFormGroupClass}">
                                     <div class="multiple-choice">
                                         <#if login.rememberMe??>
-                                            <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3"
+                                            <input id="rememberMe" name="rememberMe" type="checkbox"
                                                    checked>
                                             <label for="rememberMe"
                                                    class="${properties.kcCheckboxLabelClass}">${msg("rememberMe")}</label>
                                         <#else>
-                                            <input id="rememberMe" name="rememberMe" type="checkbox" tabindex="3">
+                                            <input id="rememberMe" name="rememberMe" type="checkbox">
                                             <label for="rememberMe"
                                                    class="${properties.kcCheckboxLabelClass}">${msg("rememberMe")}</label>
                                         </#if>
