@@ -9,6 +9,12 @@ services:
       MYSQL_PASSWORD: "password"
       MYSQL_RANDOM_ROOT_PASSWORD: "yes"
       MYSQL_USER: "keycloak"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "keycloak", "-ppassword", "--silent"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 60s
 
   keycloak:
     container_name: keycloak
@@ -34,10 +40,13 @@ services:
       - ./govuk-social-providers/:/opt/keycloak/themes/govuk-social-providers/
       - ./govuk-drt/:/opt/keycloak/themes/govuk-drt/
       - ./govuk-rscas/:/opt/keycloak/themes/govuk-rscas/
+      - ./govuk-internal-entity-search/:/opt/keycloak/themes/govuk-internal-entity-search/
     command: start-dev
     depends_on:
-      - mariadb
-      - maildev
+      mariadb:
+        condition: service_healthy
+      maildev:
+        condition: service_started
 
   maildev:
     container_name: maildev
