@@ -196,7 +196,7 @@
                                     <div id="kc-form-wrapper" class="${properties.kcFormAreaWrapperClass!}">
                                         <#nested "form">
                                         NOTE: If you are a first time POISE user please first send an account request via email to 
-                                        <a href="mailto:aphids.support@homoffice.gov.uk">aphids.support@homoffice.gov.uk</a> detailing your department and justification for access
+                                        <a href="mailto:aphids.support@homeoffice.gov.uk">aphids.support@homeoffice.gov.uk</a> detailing your department and justification for access
                                     </div>
                                 </div>
 
