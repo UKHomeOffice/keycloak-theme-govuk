@@ -32,6 +32,7 @@ services:
     volumes:
       - ./.docker-compose/keycloak.env:/etc/secrets/keycloak.env
       - ./govuk/:/opt/keycloak/themes/govuk/
+      - ./govuk-aphids/:/opt/keycloak/themes/govuk-aphids/
       - ./govuk-internal/:/opt/keycloak/themes/govuk-internal/
       - ./govuk-internal-cba/:/opt/keycloak/themes/govuk-internal-cba/
       - ./govuk-internal-dq/:/opt/keycloak/themes/govuk-internal-dq/
