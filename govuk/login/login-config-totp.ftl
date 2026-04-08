@@ -8,6 +8,12 @@
 <ol id="kc-totp-settings" class="list list-number">
     <li>
         <p>${msg("loginTotpStep1")}</p>
+
+        <ul class="list list-bullet">
+            <#list totp.supportedApplications as app>
+                <li>${msg(app)}</li>
+            </#list>
+        </ul>
     </li>
     <li>
         <p>${msg("loginTotpStep2")}</p>
